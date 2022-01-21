@@ -4,6 +4,11 @@ import {customElement, property} from 'lit/decorators.js';
 const logo = new URL('../../assets/open-wc-logo.svg', import.meta.url).href;
 
 import './pages/home-page/HomePage';
+import './pages/home-page/HomePageRazones';
+import './pages/home-page/HomePageProducts';
+import './pages/home-page/HomePageTestimonials';
+import './pages/home-page/HomePageContact';
+import './components/sahios-footer/SahiosFooter';
 
 export class SahiosWeb extends LitElement {
   @property({ type: String }) title = 'My app';
@@ -27,15 +32,11 @@ export class SahiosWeb extends LitElement {
   render() {
     return html`
       <home-page></home-page>
-      <!--<p class="app-footer">
-        🚽 Made with love by
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/open-wc"
-          >open-wc</a
-        >.
-      </p>-->
+      <home-page-razones></home-page-razones>
+      <home-page-products></home-page-products>
+      <home-page-testimonials></home-page-testimonials>
+      <home-page-contact></home-page-contact>
+      <sahios-footer></sahios-footer>
     `;
   }
 }

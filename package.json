@@ -1,18 +1,20 @@
 {
   "name": "sahios-web",
-  "description": "Webcomponent sahios-web following open-wc recommendations",
+  "description": "App sahios-web following open-wc recommendations",
+  "keywords": ["pc", "reparacion", "mantenimiento", "iOS", "iPad", "iPhone", "ifone", "Mac", "Computadora", "Celular", "Personal computer", "Phone", "cell phone", "Movil", "SO", "Sistema operativo", "office", "windows"],
   "license": "MIT",
   "author": "sahios-web",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "rimraf": "./node_modules/rimraf/bin.js",
-    "build": "rimraf dist && tsc && rollup -c rollup.config.js && npm run analyze -- --exclude dist",
-    "start:build": "web-dev-server --root-dir dist --app-index index.html --open",
+    "build": "rimraf dist && tsc && rollup -c rollup.config.js && npm run analyze -- --exclude public",
+    "start:build": "web-dev-server --root-dir public --app-index index.html --open",
     "analyze": "cem analyze --litelement",
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\""
   },
   "dependencies": {
-    "lit": "^2.0.2"
+    "lit": "^2.0.2",
+    "swiper": "latest"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.4",
@@ -28,6 +30,7 @@
     "deepmerge": "^4.2.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.60.0",
+    "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-workbox": "^6.2.0",
     "tslib": "^2.3.1",

@@ -4,6 +4,7 @@ import html from '@web/rollup-plugin-html';
 import { importMetaAssets } from '@web/rollup-plugin-import-meta-assets';
 import { terser } from 'rollup-plugin-terser';
 import { generateSW } from 'rollup-plugin-workbox';
+import copy from 'rollup-plugin-copy'
 import path from 'path';
 
 export default {
@@ -13,7 +14,7 @@ export default {
     chunkFileNames: '[hash].js',
     assetFileNames: '[hash][extname]',
     format: 'es',
-    dir: 'dist',
+    dir: 'public',
   },
   preserveEntrySignatures: false,
 
@@ -22,7 +23,12 @@ export default {
     html({
       minify: true,
       injectServiceWorker: true,
-      serviceWorkerPath: 'dist/sw.js',
+      serviceWorkerPath: 'public/sw.js',
+    }),
+    copy({
+      targets: [
+        { src: 'assets/*/', dest: 'public/assets/' }
+      ]
     }),
     /** Resolve bare module imports */
     nodeResolve(),
@@ -71,9 +77,9 @@ export default {
       globIgnores: ['polyfills/*.js', 'nomodule-*.js'],
       navigateFallback: '/index.html',
       // where to output the generated sw
-      swDest: path.join('dist', 'sw.js'),
+      swDest: path.join('public', 'sw.js'),
       // directory to match patterns against to be precached
-      globDirectory: path.join('dist'),
+      globDirectory: path.join('public'),
       // cache any html js and css by default
       globPatterns: ['**/*.{html,js,css,webmanifest}'],
       skipWaiting: true,

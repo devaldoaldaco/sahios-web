@@ -10,6 +10,7 @@ export class SahiosHeader extends LitElement {
       height: 80px;
       width: 100%;
       background: #080D25;
+      z-index: 2;
     }
 
     header {
@@ -19,6 +20,7 @@ export class SahiosHeader extends LitElement {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      z-index: 2;
     }
 
     #logo {
@@ -32,6 +34,11 @@ export class SahiosHeader extends LitElement {
 
     li.active {
       color: #46F68A;
+    }
+
+    li {
+      font-size: 0.9rem;
+      letter-spacing: 0.03rem;
     }
 
     button {
@@ -65,7 +72,7 @@ export class SahiosHeader extends LitElement {
         padding: 0;
         list-style: none;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
       }
 
       li {
@@ -76,7 +83,36 @@ export class SahiosHeader extends LitElement {
         display: none;
       }
     }
+
+    @media screen and (min-width: 1024px)  {
+      li {
+        letter-spacing: 0.03rem;
+      }
+    }
+
+    @media screen and (min-width: 1201px)  {
+      header {
+        width: calc(100% - 10rem);
+        padding: 0px 5rem;
+      }
+
+      nav {
+        min-width: 600px;
+      }
+
+      li {
+        font-size: 1rem;
+      }
+    }
+
+    @media screen and (min-width: 1400px) {
+      header {
+        width: calc(100% - 20rem);
+        padding: 0px 10rem;
+      }
+    }
   `;
+
 
   clickMenu() {
     console.log('Show menu')
