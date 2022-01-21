@@ -186,10 +186,8 @@ export class HomePageRazones extends LitElement {
 
       h3 {
         margin: 1rem 0;
-        font-size: 1.7rem;
+        font-size: 1.4rem;
       }
-
-      .reason {}
 
       .reason p {
         margin-bottom: 1rem;
@@ -208,6 +206,7 @@ export class HomePageRazones extends LitElement {
     @media screen and (min-width: 983px) {
       main {
         display: flex;
+        padding-bottom: 2rem;
       }
 
       img {
