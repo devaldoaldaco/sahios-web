@@ -63,7 +63,7 @@ export class HomePageTestimonials extends LitElement {
       background: #0F1330;
     }
 
-    article h4 {
+    article h3 {
       margin: 0;
       font-size: 1.2rem;
       letter-spacing: 0.02rem;
@@ -164,7 +164,7 @@ export class HomePageTestimonials extends LitElement {
         <article>
           <img src="../../../assets/aldo.jpg" alt="Aldo">
           <div>
-            <h4>Aldo Aldaco</h4>
+            <h3>Aldo Aldaco</h3>
             <span>Cliente 2021</span>
           </div>
           <p>Estuvo muy chido el servicio, son super profesionales y a tiempo. excelente servicio 5 estrellas</p>
@@ -172,7 +172,7 @@ export class HomePageTestimonials extends LitElement {
         <article>
           <img src="../../../assets/aldo.jpg" alt="Aldo">
           <div>
-            <h4>Aldo Aldaco</h4>
+            <h3>Aldo Aldaco</h3>
             <span>Cliente 2021</span>
           </div>
           <p>Estuvo muy chido el servicio, son super profesionales y a tiempo. excelente servicio 5 estrellas</p>
@@ -180,7 +180,7 @@ export class HomePageTestimonials extends LitElement {
         <article>
           <img src="../../../assets/aldo.jpg" alt="Aldo">
           <div>
-            <h4>Aldo Aldaco</h4>
+            <h3>Aldo Aldaco</h3>
             <span>Cliente 2021</span>
           </div>
           <p>Estuvo muy chido el servicio, son super profesionales y a tiempo. excelente servicio 5 estrellas</p>

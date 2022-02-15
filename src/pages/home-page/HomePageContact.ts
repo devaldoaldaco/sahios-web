@@ -8,7 +8,7 @@ export class HomePageContact extends LitElement {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background: #A3A9B2;
+      background: #9BA0AA;
       width: 100%;
       color: white;
     }

@@ -45,10 +45,8 @@ export class HomePageProducts extends LitElement {
     }
 
     img {
-      height: calc(320px - 2rem);
-      min-width: calc(320px - 2rem);
-      max-width: calc(320px - 2rem);
-      width: 100%;
+      height: 352px;
+      width: 325px;
       align-self: center;
     }
 

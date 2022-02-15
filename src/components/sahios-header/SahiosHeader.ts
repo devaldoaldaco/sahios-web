@@ -114,8 +114,7 @@ export class SahiosHeader extends LitElement {
   `;
 
 
-  clickMenu() {
-    console.log('Show menu')
+  _handleMenuClicked(event: MouseEvent) {
     this.dispatchEvent(new CustomEvent('sahios-header-menu-clicked', {
       bubbles: true,
       composed: true,
@@ -135,7 +134,7 @@ export class SahiosHeader extends LitElement {
               <li>Acerca de nosotros</li>
             </ul>
           </nav>
-          <button @click="${this.clickMenu}">
+          <button @click="${this._handleMenuClicked}">
             <img id="menu" src="../../../assets/menu-hamburguesa.svg" alt="Menu hamburguesa" />
           </button>
         </header>

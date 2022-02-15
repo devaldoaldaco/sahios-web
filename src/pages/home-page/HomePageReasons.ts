@@ -1,8 +1,8 @@
 import { LitElement, html, css } from "lit";
 import {customElement} from "lit/decorators.js";
 
-@customElement('home-page-razones')
-export class HomePageRazones extends LitElement {
+@customElement('home-page-reasons')
+export class HomePageReasons extends LitElement {
   static styles = css`
     :host {
       width: 100%;
