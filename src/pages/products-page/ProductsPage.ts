@@ -2,6 +2,7 @@ import { LitElement, html, css, svg, nothing } from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import '../../components/sahios-footer/SahiosFooter';
 import '../../components/sahios-card/SahiosCard';
+import '../../components/sahios-search-items/sahiosSearchItems'
 
 interface CardsElements {
   image: String,
@@ -80,6 +81,8 @@ export class ProductsPage extends LitElement {
   }
   static styles = css`
     .principal{
+      z-index: 0;
+      margin:100px 0 0 0;
       display:flex;
       justify-content: space-between;
       align-items: center;
@@ -107,30 +110,55 @@ export class ProductsPage extends LitElement {
     }
     .cards {
       display: flex;
-      justify-content: space-around
+      flex-wrap: wrap
+    }
+    .search-list {
+      margin: 0 0 0 0;
+    }
+    .second {
+      display:flex;
+      z-index: 0;
+    }
+
+    .sub-header{
+      background-color: #383B55;
+      height: 104px;
+      width: absolute;
+      z-index: 1;
+    }
+    
+    main {
+      min-height: calc(100% - 5rem);
+      background: rgb(8,11,36);
+      color: white;
+      text-align: left;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    :host {
+      width: 100%;
     }
   `;
 
   render() {
-    return html`        
-      <section>
-        <div class="principal">
-          <section class="sub-title-text">
-            <p class="products-title">Los productos de la mas alta <font color="#46F68A">calidad</font></p>
-            <p class="subtext-title"> Nos especializamos en el cuidado y mantenimiento de equipos de computo y telefonía movil, somos expertos en soluciones digitales </p>
-          </section>
-          <img class="image-products-lap" src="../../../assets/products-laptop.svg" alt="Imagen de operadora telefonica">
-        </div>
-        <div class="second">
-          <section class="cards">
-            <sahios-card .itemsCards=${this.itemsCards}></sahios-card>
-          </section>
-          <section class="search-list">
-            <sahios-search-items></sahios-search-items>
-          </section>
-        </div>            
-      </section>
+    return html`
+    <main>
+      <div class="principal">
+        <section class="sub-title-text">
+          <p class="products-title">Los productos de la mas alta <font color="#46F68A">calidad</font></p>
+          <p class="subtext-title"> Nos especializamos en el cuidado y mantenimiento de equipos de computo y telefonía movil, somos expertos en soluciones digitales </p>
+        </section>
+        <img class="image-products-lap" src="../../../assets/products-laptop.svg" alt="Imagen de operadora telefonica">
+      </div>
+      <div class="sub-header">
+      </div>
+      <div class="second">
+        <sahios-search-items class="search-list"></sahios-search-items>      
+        <sahios-card class="cards" .itemsCards=${this.itemsCards}></sahios-card>
+      </div>            
       <sahios-footer></sahios-footer>
+    </main>
     `
   }
 }

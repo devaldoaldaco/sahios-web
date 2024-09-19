@@ -79,7 +79,7 @@ export class SahiosWeb extends LitElement {
   }
   get tplHomePage(){
     return this.pageActive[0].active ? html`
-    <home-page @sahios-header-menu-clicked="${this._handleShowMenu}"></home-page>
+      <home-page @sahios-header-menu-clicked="${this._handleShowMenu}"></home-page>
       <home-page-reasons></home-page-reasons>
       <home-page-products></home-page-products>
       <home-page-testimonials></home-page-testimonials>
@@ -91,14 +91,16 @@ export class SahiosWeb extends LitElement {
   }
 
   get tplProductsPage(){
-    return  this.pageActive[1].active ? html`<product-page></product-page>`: nothing;
+    return  this.pageActive[1].active ? html`
+      <product-page></product-page>`: nothing;
   }
 
   render() {
     return html`
       <sahios-header class="header-main"  @sahios-change-page-header=${this._changePage}></sahios-header>
-      ${this.tplHomePage}
-      ${this.tplProductsPage}
+        ${this.tplHomePage}
+        ${this.tplProductsPage}
+      
     `;
   }
 }

@@ -19,6 +19,7 @@ export class SahiosCard extends LitElement {
       width: 393px;
       background-color: #111532;
       border-radius: 20px;
+      margin: 15px 22px;
       .all-description {
         display: flex;
         flex-direction: column;
@@ -112,7 +113,9 @@ export class SahiosCard extends LitElement {
         return html` 
           <div class='container'>
             <section class='all-description'>
-              <a type="button" class="button-card" @mouseover=${this.changeImage} @mouseleave="${this.changeImage}"><img src=${this.imageButtonShare.toString()} alt="x" /></a>
+              <a type="button" class="button-card" @mouseover=${this.changeImage} @mouseleave="${this.changeImage}">
+                <img src=${this.imageButtonShare.toString()} alt="x" />
+              </a>
               <img src="${element.image}" alt="x" />
               <p class="category-card"><img class="icon-left-category" src="../../assets/card-icon-category.svg" alt="x"/> ${element.category}</p>
               <p class="description-card">${element.description}</p>
