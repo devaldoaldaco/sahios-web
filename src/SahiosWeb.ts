@@ -11,6 +11,7 @@ import './pages/home-page/HomePageContact';
 import './pages/products-page/ProductsPage'
 import './components/sahios-footer/SahiosFooter';
 import './components/sahios-sidebar/SahiosSidebar';
+import './pages/service-page/servicePage'
 
 interface PageActive {
   id: String,
@@ -54,6 +55,11 @@ export class SahiosWeb extends LitElement {
     .header-main{
       position: fixed;
     }
+
+    .service-page {
+      max-height: 400px;
+      overflow: hidden;
+    }
   `;
 
   _handleShowMenu(event: MouseEvent) {
@@ -95,12 +101,17 @@ export class SahiosWeb extends LitElement {
       <product-page></product-page>`: nothing;
   }
 
+  get tplServicePage() {
+    return this.pageActive[2].active ? html`
+    <service-page class="service-page"></service-page>`: nothing;
+  }
+
   render() {
     return html`
       <sahios-header class="header-main"  @sahios-change-page-header=${this._changePage}></sahios-header>
-        ${this.tplHomePage}
-        ${this.tplProductsPage}
-      
+      ${this.tplHomePage}
+      ${this.tplProductsPage}
+      ${this.tplServicePage}
     `;
   }
 }

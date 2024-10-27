@@ -81,13 +81,10 @@ export class ProductsPage extends LitElement {
   }
   static styles = css`
     .principal{
-      z-index: 0;
-      margin:100px 0 0 0;
+      margin:100px 180px 0 180px;
       display:flex;
       justify-content: space-between;
       align-items: center;
-      margin-left: 180px;
-      margin-right: 180px;
       .subtext-title{
         color:'#FFFFFF';
         font-size: 1rem;
@@ -117,14 +114,16 @@ export class ProductsPage extends LitElement {
     }
     .second {
       display:flex;
-      z-index: 0;
+      background-color: #2A2D45;
     }
 
     .sub-header{
+      position: absolute;
+      width: calc(100% - 5rem);
       background-color: #383B55;
       height: 104px;
-      width: absolute;
-      z-index: 1;
+      margin: 0 102px 0 102px;
+      border-radius: 16px;
     }
     
     main {
@@ -133,8 +132,7 @@ export class ProductsPage extends LitElement {
       color: white;
       text-align: left;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
+      position: relative
     }
     :host {
       width: 100%;
@@ -152,11 +150,12 @@ export class ProductsPage extends LitElement {
         <img class="image-products-lap" src="../../../assets/products-laptop.svg" alt="Imagen de operadora telefonica">
       </div>
       <div class="sub-header">
+        <p>este es el menu </p>
       </div>
       <div class="second">
         <sahios-search-items class="search-list"></sahios-search-items>      
         <sahios-card class="cards" .itemsCards=${this.itemsCards}></sahios-card>
-      </div>            
+      </div>
       <sahios-footer></sahios-footer>
     </main>
     `
