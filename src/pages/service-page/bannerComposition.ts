@@ -5,11 +5,15 @@ import {customElement, property} from 'lit/decorators.js';
 export class BannerComposition extends LitElement {
   
   @property()
-  dataInfo
+  icon: string;
+  title: string;
+  text: string;
 
   constructor() {
     super();
-    this.dataInfo=[{}]
+    this.icon = "";
+    this.title = "";
+    this.text = "";
   }
 
   static styles = css`
@@ -17,26 +21,57 @@ export class BannerComposition extends LitElement {
         margin: 0;
         padding: 0;
       }
-      .background-item {
-        background-color: green;
-        max-width: 465px;
-        max-height: 200px;
+
+      .reason {
+        border-radius: 1rem;
+        margin: 2rem auto;
+        position: relative;
+        width: calc(85% - 2rem);
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: rgba(255,255,255,0.06);
+        max-width: 44.75rem;
       }
+
       @media(max-width: 500px){
+        .reason {
+          img {
+            position: absolute;
+            top: -0.75rem;
+            left: calc(50% - 0.75rem);
+            height: 2rem;
+            width: 2rem;
+            margin: 0px auto;
+          }
+          div {
+            display: block;
+            unicode-bidi: isolate;
+            h3 {
+              font-size: 1.3rem;
+              margin: 0.8rem 0px;
+            }
+            p {
+              margin: 0px;
+              font-size: 0.8rem;
+              letter-spacing: 0.02rem;
+              line-height: 1rem;
+              padding: 0px;
+            }
+          }
       }
   `;
 
   render() {
-    console.log(this.dataInfo)
     return html`
-      <div class = "background-item">
-        <div class ="banner-icon">
-        </div>
-        <div class = "banner-text">
-          <p>Garantia</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,</p>
-        </div>  
-      </div>    
+         <div class="reason">
+            <img class="icon" src="${this.icon}" alt="checkmark">
+            <div>
+              <h3>${this.title}</h3>
+              <p>${this.text}</p>
+            </div>
+          </div>
     `
   }
 }

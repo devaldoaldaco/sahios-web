@@ -6,31 +6,26 @@ import './bannerComposition'
 export class ServicePage extends LitElement {
   
   @property()
-  dataInfo
+  dataInfo;
 
   constructor() {
     super();
     this.dataInfo = [
       {
+        icon: "../../../assets/icon-checkmark.svg",
         title: "garantia",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
       },
       {
+        icon: "../../../assets/icon-clock.svg",
         title: "Servicio Rapido",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
       },
       {
-        title: "garantia",
+        icon: "../../../assets/icon-money.svg",
+        title: "No cobramos por cotizacion ",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
       },
-      {
-        title: "garantia",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
-      },
-      {
-        title: "garantia",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
-      }
     ]
   }
 
@@ -42,7 +37,7 @@ export class ServicePage extends LitElement {
       @media(max-width: 500px) {
          .title-section {
             max-width: 100%;
-            height: 70%;
+            height: 80vh;
             padding-top: 149px;
             text-align: left;
             background: radial-gradient(circle at 80rem 92rem,#0B4A5D, #080B24);
@@ -88,7 +83,15 @@ export class ServicePage extends LitElement {
         </div>
       </section>
       <section>
-      <banner-composition></banner-composition>
+        ${this.dataInfo.map( element => html `
+          <banner-composition 
+            .icon = ${element.icon}
+            .title = ${element.title}
+            .text = ${element.description}
+            >
+          </banner-composition>
+        `)}
+        
       </section>
       
     `
