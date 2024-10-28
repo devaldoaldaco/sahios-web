@@ -55,11 +55,6 @@ export class SahiosWeb extends LitElement {
     .header-main{
       position: fixed;
     }
-
-    .service-page {
-      max-height: 400px;
-      overflow: hidden;
-    }
   `;
 
   _handleShowMenu(event: MouseEvent) {
