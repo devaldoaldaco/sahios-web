@@ -5,8 +5,11 @@ import './bannerComposition'
 @customElement('service-page')
 export class ServicePage extends LitElement {
   
-  @property()
+  @property({type:Array})
   dataInfo;
+  @property({type:Array})
+  listInfoServices;
+
 
   constructor() {
     super();
@@ -24,6 +27,38 @@ export class ServicePage extends LitElement {
       {
         icon: "../../../assets/icon-money.svg",
         title: "No cobramos por cotizacion ",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
+      },
+    ]
+    this.listInfoServices = [
+      {
+        icon: "../../../assets/icon-checkmark.svg",
+        title: "Windows",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
+      },
+      {
+        icon: "../../../assets/icon-checkmark.svg",
+        title: "Apple IOS",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
+      },
+      {
+        icon: "../../../assets/icon-checkmark.svg",
+        title: "Tablets",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
+      },
+      {
+        icon: "../../../assets/icon-checkmark.svg",
+        title: "Smartphones",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
+      },
+      {
+        icon: "../../../assets/icon-checkmark.svg",
+        title: "Android",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
+      },
+      {
+        icon: "../../../assets/icon-checkmark.svg",
+        title: "PC components",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
       },
     ]
@@ -67,6 +102,41 @@ export class ServicePage extends LitElement {
               }
             }
           }
+
+          .second-section{
+            .title-section-two{
+              font-size: 40px;
+              margin: 55px 35px 45px 25px;
+              text-align: left;
+              line-height: 1.0;
+              font-family: arial;
+              font-weight: bold;
+              letter-spacing: -2px;
+            }
+            .ask-for-a-quote {
+              background-color:#2B3055;
+              height: 421px;
+              display: flex;
+              flex-direction: column;
+              text-align: left;
+              justify-content: space-between;
+              border-radius: 14px;
+              p {
+                margin: 0px 35px 0 35px;
+              } 
+              h2 {
+                margin: 68px 20px 0 35px;
+              }
+              button {
+                height: 60px;
+                border-radius: 8px;
+                background-color: #46F68A;
+                margin: 0 35px 73px 35px;
+                font-size: 18px;
+                font-weight: bold;
+              }
+            }
+          }
       }
   `;
 
@@ -82,16 +152,31 @@ export class ServicePage extends LitElement {
           <img src="../../assets/service-image.svg">  
         </div>
       </section>
-      <section>
+      <section class="second-section">
         ${this.dataInfo.map( element => html `
           <banner-composition 
+            class-banner="reason"
             .icon = ${element.icon}
             .title = ${element.title}
             .text = ${element.description}
             >
           </banner-composition>
         `)}
-        
+        <h1 class="title-section-two">Tenemos todo tipo de soluciones para tu equipo</h1>
+        ${this.listInfoServices.map( element => html `
+          <banner-composition 
+            class-banner="reason-inside-container"
+            .icon = ${element.icon}
+            .title = ${element.title}
+            .text = ${element.description}
+            >
+          </banner-composition>
+        `)}
+        <div class="ask-for-a-quote">
+          <h2>¿Tu teléfono roto necesita una reparación?</h2>
+          <p>Somos especialistas en pantallas touch</p>
+          <button>Pedir cotización</button>
+        </div>
       </section>
       
     `

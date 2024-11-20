@@ -17,7 +17,8 @@ interface CardsElements {
 export class ProductsPage extends LitElement {
   @property({ type: String }) title = 'Home';
   @property({ type: Boolean}) hidden = false;
-  @property({ type: Array})  itemsCards:CardsElements[] = [];
+  @property({ type: Array})  
+  itemsCards;
 
   constructor() {
       super();

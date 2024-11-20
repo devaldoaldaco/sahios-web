@@ -9,11 +9,17 @@ export class BannerComposition extends LitElement {
   title: string;
   text: string;
 
+  @property({type: String, attribute: "class-banner"})
+  classBaner;
+
+  
+
   constructor() {
     super();
     this.icon = "";
     this.title = "";
     this.text = "";
+    this.classBaner="";
   }
 
   static styles = css`
@@ -60,13 +66,37 @@ export class BannerComposition extends LitElement {
               padding: 0px;
             }
           }
+        }
+        .reason-inside-container {
+          border-radius: 1rem;
+          margin: 2rem auto;
+          position: relative;
+          width: calc(85% - 2rem);
+          padding: 1rem;
+          display: flex;
+          justify-content: center;
+          background: rgba(255, 255, 255, 0.06);
+          max-width: 44.75rem;
+          .icons {
+            position: static;
+            height: 22px;
+            width: 22px;
+          }
+          div {
+            margin-left: 1rem;
+            text-align: left;
+            h3 {
+              margin-bottom: 14px;
+            }
+          }
+        }
       }
   `;
 
   render() {
     return html`
-         <div class="reason">
-            <img class="icon" src="${this.icon}" alt="checkmark">
+         <div class="${this.classBaner}">
+            <img class="icons" src="${this.icon}" alt="checkmark">
             <div>
               <h3>${this.title}</h3>
               <p>${this.text}</p>
