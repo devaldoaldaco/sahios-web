@@ -45,9 +45,7 @@ export class HomePageReasons extends LitElement {
       width: 70%;
     }
 
-    .left-section, .right-section {
 
-    }
     .right-section {
       padding-top: 3rem;
       display: flex;
