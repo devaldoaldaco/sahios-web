@@ -2,6 +2,7 @@ import { LitElement, html, css, svg, nothing, PropertyDeclarations } from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import '../../components/sahios-footer/SahiosFooter';
 import './bannerComposition'
+import '../../pages/home-page/HomePageContact'
 @customElement('service-page')
 export class ServicePage extends LitElement {
   
@@ -9,6 +10,9 @@ export class ServicePage extends LitElement {
   dataInfo;
   @property({type:Array})
   listInfoServices;
+
+  @property({type:Array})
+  careComputerEquipment;
 
 
   constructor() {
@@ -59,6 +63,21 @@ export class ServicePage extends LitElement {
       {
         icon: "../../../assets/icon-checkmark.svg",
         title: "PC components",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
+      },
+    ]
+    this.careComputerEquipment = [
+      {
+        image: "../../../assets/care-computer-equipment.svg",
+        title: "conoce todos nuestros servicios",
+        greenLetter: 'especializados',
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
+        
+      },
+      {
+        image: "../../../assets/care-computer-equipment.svg",
+        title: "conoce todos nuestros servicios",
+        greenLetter: 'especializados',
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
       },
     ]
@@ -120,7 +139,7 @@ export class ServicePage extends LitElement {
               flex-direction: column;
               text-align: left;
               justify-content: space-between;
-              border-radius: 14px;
+              border-radius: 8px;
               p {
                 margin: 0px 35px 0 35px;
               } 
@@ -134,6 +153,11 @@ export class ServicePage extends LitElement {
                 margin: 0 35px 73px 35px;
                 font-size: 18px;
                 font-weight: bold;
+              }
+            }
+            .care-your-pc {
+              h2 {
+                margin: 2.8rem 42px 0 42px;
               }
             }
           }
@@ -177,8 +201,22 @@ export class ServicePage extends LitElement {
           <p>Somos especialistas en pantallas touch</p>
           <button>Pedir cotización</button>
         </div>
+        <div class="care-your-pc"> 
+          <h2>Cuidamos de tu equipo como tu cuidarías de el</h2>
+            ${this.careComputerEquipment.map( element => html `
+              <banner-composition
+                class-banner="reason-care-computer"
+                .icon = ${element.image}
+                .title = ${element.title}
+                .text = ${element.description}
+                green-letter=${element.greenLetter}
+                >
+              </banner-composition>
+            `)}
+        </div>
+        <home-page-contact></home-page-contact>
+        <sahios-footer></sahios-footer>
       </section>
-      
     `
   }
 }

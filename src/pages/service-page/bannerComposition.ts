@@ -9,6 +9,9 @@ export class BannerComposition extends LitElement {
   title: string;
   text: string;
 
+  @property({type: String, attribute: 'green-letter'})
+  greenLetter: string;
+
   @property({type: String, attribute: "class-banner"})
   classBaner;
 
@@ -20,6 +23,7 @@ export class BannerComposition extends LitElement {
     this.title = "";
     this.text = "";
     this.classBaner="";
+    this.greenLetter ="";
   }
 
   static styles = css`
@@ -90,6 +94,27 @@ export class BannerComposition extends LitElement {
             }
           }
         }
+
+        .reason-care-computer {
+          margin: 2rem auto;
+          position: relative;
+          width: calc(90% - 1rem);
+          padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          max-width: 44.75rem;
+          h3 {
+            margin: 2rem 0;
+            font-size: 28px;
+          }
+          div {
+            text-align: left;
+          }
+          span {
+            color:  #46F68A;
+          }
+        }
       }
   `;
 
@@ -98,7 +123,8 @@ export class BannerComposition extends LitElement {
          <div class="${this.classBaner}">
             <img class="icons" src="${this.icon}" alt="checkmark">
             <div>
-              <h3>${this.title}</h3>
+              <h3>${this.title} <span>${this.greenLetter}</span></h3>
+              </p></h3>
               <p>${this.text}</p>
             </div>
           </div>
