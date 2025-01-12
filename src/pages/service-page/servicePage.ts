@@ -88,6 +88,50 @@ export class ServicePage extends LitElement {
         margin: 0;
         padding: 0;
       }
+
+      @media(min-width: 500px) {
+        .title-section {
+          display: flex;
+          flex-direction: row;
+          max-width: 100%;
+          height: 100vh;
+          padding-top: 149px;
+
+          background: radial-gradient(circle at 80rem 92rem,#0B4A5D, #080B24);
+          .left-service-page {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin: 6rem 0px 0px 180px;
+            .title-service-page {
+              font-size: 75px;
+              font-weight: bold;
+              letter-spacing: -3px;
+              br:nth-child(2){
+                display: none;
+              }
+              span:nth-child(4) {
+                color: #46F68A;
+              }
+            }
+            p {
+              font-size: 16px;
+            }
+          }
+          .container {
+            display: flex;
+            overflow: hidden;
+            flex-direction: column;
+            align-items: baseline;
+            width: 50vw;
+            margin-top: 4rem;
+            img {
+              width: 55rem;
+              height: 50rem; 
+            }
+          }
+        }
+      }
       @media(max-width: 500px) {
          .title-section {
             max-width: 100%;
@@ -103,6 +147,9 @@ export class ServicePage extends LitElement {
               font-weight: bold;
               letter-spacing: -3px;
               margin: 0 31px 35px 41px;
+              br:nth-child(3){
+                display: none;
+              }
               span {
                 color: #46F68A;
               }
@@ -168,10 +215,12 @@ export class ServicePage extends LitElement {
     console.log(this.dataInfo)
     return html`
       <section class="title-section">
-        <h1 class="title-service-page"> 
-          <span>Conoce</span> todos <br>nuestros servicios <span>especializados</span>
-        </h1>
-        <p class="text-title-service-page">Nos especializamos en el cuidado y mantenimiento de equipos de computo y telefonía movil, somos expertos en soluciones digitales</p>
+        <div class="left-service-page">
+          <h1 class="title-service-page"> 
+            <span class="span-without-color">Conoce</span> todos <br calss="hide-br">nuestros   <br>servicios <span>especializados</span>
+          </h1>
+          <p class="text-title-service-page">Nos especializamos en el cuidado y mantenimiento de equipos de computo y telefonía movil, somos expertos en soluciones digitales</p>
+        </div>
         <div class="container">
           <img src="../../assets/service-image.svg">  
         </div>
