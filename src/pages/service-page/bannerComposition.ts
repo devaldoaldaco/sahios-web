@@ -45,6 +45,76 @@ export class BannerComposition extends LitElement {
         max-width: 44.75rem;
       }
 
+      @media(min-width: 500px){
+        .reason {
+          height: 177px;
+          width: 460px;
+          position: static;
+          flex-direction: row;
+          align-items: center;
+          margin-left: 2rem;
+          text-align: left;
+          img {
+            height: 2rem;
+            width: 2rem;
+            margin: 0 40px 0 30px;
+          }
+          h3 {
+            font-size: 20px;
+          }
+          p {
+            margin-top: 15px;
+            font-size: 16px;
+          }
+        }
+        .reason-inside-container {
+          border-radius: 1rem;
+          margin: 16px 12px;
+          text-align: left;
+          position: relative;
+          padding: 1rem;
+          display: flex;
+          justify-content: center;
+          background: rgba(255, 255, 255, 0.06);
+          max-width: 500px;
+          img {
+            height: 2rem;
+            width: 2rem;
+            margin: 0 40px 0 30px;
+          }
+          h3 {
+            font-size: 20px;
+          }
+          p {
+            margin-top: 15px;
+            font-size: 16px;
+          }
+        }
+        .reason-care-computer {
+          margin: 2rem auto;
+          position: relative;
+          width: calc(90% - 1rem);
+          padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          max-width: 698px;
+          h3 {
+            margin: 60px 0;
+            margin-right: 5rem;
+            font-size: 40px;
+          }
+          div {
+            text-align: left;
+          }
+          span {
+            color:  #46F68A;
+          }
+          p {
+            font-size: 18px;
+          }
+        }
+      }
       @media(max-width: 500px){
         .reason {
           img {
@@ -124,7 +194,6 @@ export class BannerComposition extends LitElement {
             <img class="icons" src="${this.icon}" alt="checkmark">
             <div>
               <h3>${this.title} <span>${this.greenLetter}</span></h3>
-              </p></h3>
               <p>${this.text}</p>
             </div>
           </div>

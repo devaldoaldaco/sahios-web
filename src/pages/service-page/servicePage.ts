@@ -91,20 +91,20 @@ export class ServicePage extends LitElement {
 
       @media(min-width: 500px) {
         .title-section {
-          display: flex;
-          flex-direction: row;
           max-width: 100%;
-          height: 100vh;
-          padding-top: 149px;
-
-          background: radial-gradient(circle at 80rem 92rem,#0B4A5D, #080B24);
+          padding-top:15rem;
+          background: radial-gradient(closest-side at 55% 55%, #0B4A5D, #080B24);
           .left-service-page {
-            display: flex;
+            height: 35rem;
+            padding: 0rem 50% 0 8%;
+            background-image: url(../../assets/service-image.svg);
+            background-repeat: no-repeat;
+            background-position-x: 100%;
+            background-size: 50%;
             flex-direction: column;
             text-align: left;
-            margin: 6rem 0px 0px 180px;
             .title-service-page {
-              font-size: 75px;
+              font-size: 60px;
               font-weight: bold;
               letter-spacing: -3px;
               br:nth-child(2){
@@ -115,19 +115,56 @@ export class ServicePage extends LitElement {
               }
             }
             p {
+              margin-top: 16px;
+              padding-right: 33%;
               font-size: 16px;
             }
           }
-          .container {
+        }
+        .second-section {
+          .card-container {
             display: flex;
-            overflow: hidden;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+          }
+          .card-container-footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 100px 0 300px 0;
+          }
+          .title-section-two {
+            text-align: left;
+            font-size: 35px;
+            margin: 107px 50% 80px 8%;
+            margin-left: 8%;
+            margin-right: 50%
+          }
+          .ask-for-a-quote {
+            background-color:#2B3055;
+            display: flex;
+            margin: 121px 7% 134px 7%;
+            height: 359px;
             flex-direction: column;
-            align-items: baseline;
-            width: 50vw;
-            margin-top: 4rem;
-            img {
-              width: 55rem;
-              height: 50rem; 
+            border-radius: 8px;
+            justify-content: center;
+            align-items: center;
+            p {
+              margin: 8px 35px 0 35px;
+            } 
+            h2 {
+              margin: 68px 20px 0 35px;
+            }
+            button {
+              height: 60px;
+              width: 400px;
+              border-radius: 8px;
+              background-color: #46F68A;
+              margin: 60px 35px 65px 35px;
+              font-size: 18px;
+              font-weight: bold;
             }
           }
         }
@@ -139,6 +176,14 @@ export class ServicePage extends LitElement {
             padding-top: 149px;
             text-align: left;
             background: radial-gradient(circle at 80rem 92rem,#0B4A5D, #080B24);
+            .left-service-page {
+              background-image: url("../../assets/service-image.svg");
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: center;
+              background-position-y: 18rem;
+              height:100%
+            }
             .text-title-service-page {
               margin: 0 31px 0 41px;
             }
@@ -221,30 +266,31 @@ export class ServicePage extends LitElement {
           </h1>
           <p class="text-title-service-page">Nos especializamos en el cuidado y mantenimiento de equipos de computo y telefonía movil, somos expertos en soluciones digitales</p>
         </div>
-        <div class="container">
-          <img src="../../assets/service-image.svg">  
-        </div>
       </section>
       <section class="second-section">
-        ${this.dataInfo.map( element => html `
-          <banner-composition 
-            class-banner="reason"
-            .icon = ${element.icon}
-            .title = ${element.title}
-            .text = ${element.description}
-            >
-          </banner-composition>
-        `)}
+        <div class="card-container">
+          ${this.dataInfo.map( element => html `
+            <banner-composition 
+              class-banner="reason"
+              .icon = ${element.icon}
+              .title = ${element.title}
+              .text = ${element.description}
+              >
+            </banner-composition>
+          `)}
+        </div>
         <h1 class="title-section-two">Tenemos todo tipo de soluciones para tu equipo</h1>
-        ${this.listInfoServices.map( element => html `
-          <banner-composition 
-            class-banner="reason-inside-container"
-            .icon = ${element.icon}
-            .title = ${element.title}
-            .text = ${element.description}
-            >
-          </banner-composition>
-        `)}
+        <div class="card-container">
+          ${this.listInfoServices.map( element => html `
+            <banner-composition 
+              class-banner="reason-inside-container"
+              .icon = ${element.icon}
+              .title = ${element.title}
+              .text = ${element.description}
+              >
+            </banner-composition>
+          `)}
+        </div>
         <div class="ask-for-a-quote">
           <h2>¿Tu teléfono roto necesita una reparación?</h2>
           <p>Somos especialistas en pantallas touch</p>
@@ -252,16 +298,18 @@ export class ServicePage extends LitElement {
         </div>
         <div class="care-your-pc"> 
           <h2>Cuidamos de tu equipo como tu cuidarías de el</h2>
-            ${this.careComputerEquipment.map( element => html `
-              <banner-composition
-                class-banner="reason-care-computer"
-                .icon = ${element.image}
-                .title = ${element.title}
-                .text = ${element.description}
-                green-letter=${element.greenLetter}
-                >
-              </banner-composition>
-            `)}
+            <div class="card-container-footer">
+              ${this.careComputerEquipment.map( element => html `
+                <banner-composition
+                  class-banner="reason-care-computer"
+                  .icon = ${element.image}
+                  .title = ${element.title}
+                  .text = ${element.description}
+                  green-letter=${element.greenLetter}
+                  >
+                </banner-composition>
+              `)}
+            </div>
         </div>
         <home-page-contact></home-page-contact>
         <sahios-footer></sahios-footer>
