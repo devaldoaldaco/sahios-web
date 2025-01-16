@@ -1,8 +1,30 @@
 import { LitElement, html, css } from "lit";
-import {customElement} from "lit/decorators.js";
+import {customElement, property} from 'lit/decorators.js';
 
+interface ClassAdd {
+    id: String,
+    classToString: String
+}
 @customElement('sahios-header')
 export class SahiosHeader extends LitElement {
+
+
+  @property({ type: Array }) classAdd:ClassAdd[] = [{
+    id:'home', 
+    classToString: 'active',
+  },
+  {
+    id:'products',
+    classToString: 'false'
+  },
+  {
+    id :'service', 
+    classToString: 'false'
+  },
+  {
+    id:"about",
+    classToString: 'false'
+  }];
 
   static styles = css`
     :host {
@@ -122,16 +144,52 @@ export class SahiosHeader extends LitElement {
     }));
   }
 
+
+  _changeActive(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    this.classAdd = [
+      {
+        id:'home', 
+        classToString: 'false',
+      },
+      {
+        id:'products',
+        classToString: 'false'
+      },
+      {
+        id :'service', 
+        classToString: 'false'
+      },
+      {
+        id:"about",
+        classToString: 'false'
+      }
+    ];
+    this.classAdd.forEach((testing, index) => {
+      if(testing.id === target.id) {
+        this.classAdd[index].classToString = 'active'
+      } else {
+        this.classAdd[index].classToString = 'false'
+      }
+    });
+    this.dispatchEvent(new CustomEvent('sahios-change-page-header',{
+      bubbles: true,
+      composed: true,
+      detail: String(target.id)
+    }));
+  }
+
+  
   render() {
     return html`
         <header>
           <img id="logo" src="../../../assets/logo-horizontal-blanco.svg" alt="Logo" />
           <nav>
             <ul>
-              <li class="active">Inicio</li>
-              <li>Productos</li>
-              <li>Servicios</li>
-              <li>Acerca de nosotros</li>
+              <li class="${this.classAdd.length > 0 ? this.classAdd[0].classToString.toString(): ''}" @click=${this._changeActive} id="home"> Inicio </li>
+              <li class="${this.classAdd.length > 0 ? this.classAdd[1].classToString.toString(): ''}" @click=${this._changeActive} id="products"> Productos </li>
+              <li class="${this.classAdd.length > 0 ? this.classAdd[2].classToString.toString(): ''}" @click=${this._changeActive} id="service"> Servicios </li>
+              <li class="${this.classAdd.length > 0 ? this.classAdd[3].classToString.toString(): ''}" @click=${this._changeActive} id="about"> Acerca de nosotros </li>
             </ul>
           </nav>
           <button @click="${this._handleMenuClicked}">

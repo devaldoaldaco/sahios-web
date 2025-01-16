@@ -36,7 +36,7 @@ export class HomePageContact extends LitElement {
     }
 
     button {
-      min-width: calc(320px - 2rem);
+      min-width: calc(100% - 2rem);
       min-height: 3.5rem;
       border-radius: 5px;
       font-size: 0.9rem;
@@ -57,6 +57,7 @@ export class HomePageContact extends LitElement {
     }
 
     .left-section {
+      margin-left:10px;
       display: block;
     }
 
@@ -218,7 +219,7 @@ export class HomePageContact extends LitElement {
       </section>
 
       <section class="right-section">
-          <img src="../../../assets/operadora-transparent.png" alt="Imagen de operadora telefonica">
+          <img src="../../../assets/laidy-contact.svg" alt="Imagen de operadora telefonica">
       </section>
     `;
   }

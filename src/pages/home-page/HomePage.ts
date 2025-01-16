@@ -284,7 +284,6 @@ export class HomePage extends LitElement {
 
   render() {
     return html`
-        <sahios-header></sahios-header>
         <main>
           <section class="left-section">
             <h1>

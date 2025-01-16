@@ -1,7 +1,7 @@
 import {LitElement, html, css, PropertyValues} from "lit";
 import {customElement} from "lit/decorators.js";
-import Swiper, { Navigation, Pagination } from 'swiper';
-
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
 @customElement('home-page-products')
 export class HomePageProducts extends LitElement {
   static styles = css`
