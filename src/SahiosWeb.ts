@@ -11,7 +11,8 @@ import './pages/home-page/HomePageContact';
 import './pages/products-page/ProductsPage'
 import './components/sahios-footer/SahiosFooter';
 import './components/sahios-sidebar/SahiosSidebar';
-import './pages/service-page/servicePage'
+import './pages/service-page/servicePage';
+import './pages/more-about/moreAbout';
 
 interface PageActive {
   id: String,
@@ -101,12 +102,18 @@ export class SahiosWeb extends LitElement {
     <service-page class="service-page"></service-page>`: nothing;
   }
 
+  get tplMoreAbout() {
+    return this.pageActive[3].active ? html `
+    <more-about></more-about>`: nothing;
+  }
+
   render() {
     return html`
       <sahios-header class="header-main"  @sahios-change-page-header=${this._changePage}></sahios-header>
       ${this.tplHomePage}
       ${this.tplProductsPage}
       ${this.tplServicePage}
+      ${this.tplMoreAbout}
     `;
   }
 }
