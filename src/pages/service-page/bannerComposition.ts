@@ -114,6 +114,33 @@ export class BannerComposition extends LitElement {
             font-size: 18px;
           }
         }
+
+        .about-us-banner {
+          margin: 2rem auto;
+          padding: 1rem;
+          display: flex;
+          justify-content: center;
+          max-width: 44.75rem;
+          height: 177px;
+          position: static;
+          flex-direction: row;
+          align-items: center;
+          text-align: left;
+          border-radius: 1rem;
+          background: rgba(255,255,255,0.06);
+          img {
+            height: 2rem;
+            width: 2rem;
+            margin: 0 40px 0 30px;
+          }
+          h3 {
+            font-size: 20px;
+          }
+          p {
+            margin-top: 15px;
+            font-size: 16px;
+          }
+        }
       }
       @media(max-width: 500px){
         .reason {
@@ -183,6 +210,42 @@ export class BannerComposition extends LitElement {
           }
           span {
             color:  #46F68A;
+          }
+        }
+
+        .about-us-banner {
+          border-radius: 1rem;
+          margin: 2rem auto;
+          position: relative;
+          width: calc(85% - 2rem);
+          padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          background: rgba(255,255,255,0.06);
+          max-width: 44.75rem;
+          img {
+              position: absolute;
+              top: -0.75rem;
+              left: calc(50% - 0.75rem);
+              height: 2rem;
+              width: 2rem;
+              margin: 0px auto;
+            }
+          div {
+            display: block;
+            unicode-bidi: isolate;
+            h3 {
+              font-size: 1.3rem;
+              margin: 0.8rem 0px;
+            }
+            p {
+              margin: 0px;
+              font-size: 0.8rem;
+              letter-spacing: 0.02rem;
+              line-height: 1rem;
+              padding: 0px;
+            }
           }
         }
       }
