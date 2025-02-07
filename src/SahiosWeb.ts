@@ -83,7 +83,6 @@ export class SahiosWeb extends LitElement {
     return this.pageActive[0].active ? html`
       <home-page @sahios-header-menu-clicked="${this._handleShowMenu}"></home-page>
       <home-page-reasons></home-page-reasons>
-      <home-page-products></home-page-products>
       <home-page-testimonials></home-page-testimonials>
       <home-page-contact></home-page-contact>
       <sahios-footer></sahios-footer>
@@ -111,7 +110,6 @@ export class SahiosWeb extends LitElement {
     return html`
       <sahios-header class="header-main"  @sahios-change-page-header=${this._changePage}></sahios-header>
       ${this.tplHomePage}
-      ${this.tplProductsPage}
       ${this.tplServicePage}
       ${this.tplMoreAbout}
     `;

@@ -74,6 +74,9 @@ export class SahiosHeader extends LitElement {
       width: 44px;
     }
 
+    .nav-visible {
+
+    }
     @media screen and (min-width: 562px) {
       header {
         height: 100%;
@@ -137,6 +140,7 @@ export class SahiosHeader extends LitElement {
 
 
   _handleMenuClicked(event: MouseEvent) {
+
     this.dispatchEvent(new CustomEvent('sahios-header-menu-clicked', {
       bubbles: true,
       composed: true,
@@ -184,10 +188,9 @@ export class SahiosHeader extends LitElement {
     return html`
         <header>
           <img id="logo" src="../../../assets/logo-horizontal-blanco.svg" alt="Logo" />
-          <nav>
+          <nav class="nav-visible">
             <ul>
               <li class="${this.classAdd.length > 0 ? this.classAdd[0].classToString.toString(): ''}" @click=${this._changeActive} id="home"> Inicio </li>
-              <li class="${this.classAdd.length > 0 ? this.classAdd[1].classToString.toString(): ''}" @click=${this._changeActive} id="products"> Productos </li>
               <li class="${this.classAdd.length > 0 ? this.classAdd[2].classToString.toString(): ''}" @click=${this._changeActive} id="service"> Servicios </li>
               <li class="${this.classAdd.length > 0 ? this.classAdd[3].classToString.toString(): ''}" @click=${this._changeActive} id="about"> Acerca de nosotros </li>
             </ul>
