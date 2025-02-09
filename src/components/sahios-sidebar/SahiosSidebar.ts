@@ -1,14 +1,37 @@
 import { LitElement, html, css } from "lit";
 import {customElement, property} from "lit/decorators.js";
 
+interface ClassAdd {
+  id: String,
+  classToString: String
+}
+
 @customElement('sahios-sidebar')
 export class SahiosSidebar extends LitElement {
   @property({ type: String }) active = 'inicio';
+  @property({ type: Array }) classAdd:ClassAdd[] = [{
+    id:'home', 
+    classToString: 'active',
+  },
+  {
+    id:'products',
+    classToString: 'false'
+  },
+  {
+    id :'service', 
+    classToString: 'false'
+  },
+  {
+    id:"about",
+    classToString: 'false'
+  }];
+  
 
   static styles = css`
     :host {
       width: 100%;
       height: 100vh;
+      margin: 5rem 0 0 0;
       position: absolute;
       top: 0;
       right: 0;
@@ -98,21 +121,48 @@ export class SahiosSidebar extends LitElement {
     this.dispatchEvent(new CustomEvent('sahios-sidebar-close-clicked', {bubbles: true, composed: true, detail: true}));
   }
 
+  _changeActive(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    this.classAdd = [
+      {
+        id:'home', 
+        classToString: 'false',
+      },
+      {
+        id:'products',
+        classToString: 'false'
+      },
+      {
+        id :'service', 
+        classToString: 'false'
+      },
+      {
+        id:"about",
+        classToString: 'false'
+      }
+    ];
+    this.classAdd.forEach((testing, index) => {
+      if(testing.id === target.id) {
+        this.classAdd[index].classToString = 'active'
+      } else {
+        this.classAdd[index].classToString = 'false'
+      }
+    });
+    this.dispatchEvent(new CustomEvent('sahios-change-page-header',{
+      bubbles: true,
+      composed: true,
+      detail: String(target.id)
+    }));
+  }
 
   render() {
     return html`
-      <section class="top-section">
-        <button @click="${this._handleCloseMenu}">
-          <img src="../../../assets/icon-close.svg" alt="Icon close">
-        </button>
-      </section>
       <section class="bottom-section">
         <nav>
           <ul>
-            <li>Inicio</li>
-            <li>Productos</li>
-            <li>Servicios</li>
-            <li>Acerca de nosotros</li>
+            <li class="${this.classAdd.length > 0 ? this.classAdd[0].classToString.toString(): ''}" @click=${this._changeActive} id="home"> Inicio </li>
+            <li class="${this.classAdd.length > 0 ? this.classAdd[2].classToString.toString(): ''}" @click=${this._changeActive} id="service"> Servicios </li>
+            <li class="${this.classAdd.length > 0 ? this.classAdd[3].classToString.toString(): ''}" @click=${this._changeActive} id="about"> Acerca de nosotros </li>
           </ul>
         </nav>
       </section>

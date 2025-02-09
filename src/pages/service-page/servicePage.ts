@@ -92,7 +92,7 @@ export class ServicePage extends LitElement {
       @media(min-width: 500px) {
         .title-section {
           max-width: 100%;
-          padding-top:15rem;
+          padding-top: 3rem;
           background: radial-gradient(closest-side at 55% 55%, #0B4A5D, #080B24);
           .left-service-page {
             height: 35rem;
@@ -173,7 +173,7 @@ export class ServicePage extends LitElement {
          .title-section {
             max-width: 100%;
             height: 80vh;
-            padding-top: 149px;
+            padding-top: 3rem;
             text-align: left;
             background: radial-gradient(circle at 80rem 92rem,#0B4A5D, #080B24);
             .left-service-page {

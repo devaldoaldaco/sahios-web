@@ -74,9 +74,6 @@ export class SahiosHeader extends LitElement {
       width: 44px;
     }
 
-    .nav-visible {
-
-    }
     @media screen and (min-width: 562px) {
       header {
         height: 100%;
@@ -140,7 +137,7 @@ export class SahiosHeader extends LitElement {
 
 
   _handleMenuClicked(event: MouseEvent) {
-
+    console.log("evento")
     this.dispatchEvent(new CustomEvent('sahios-header-menu-clicked', {
       bubbles: true,
       composed: true,

@@ -93,7 +93,7 @@ export class MoreAbout extends LitElement {
       @media(min-width: 500px) {
         .title-section {
           max-width: 100%;
-          padding-top:5rem;
+          padding-top:3rem;
           background: radial-gradient(closest-side at 55% 55%, #0B4A5D, #080B24);
           .left-more-about {
             height: 35rem;
@@ -211,7 +211,7 @@ export class MoreAbout extends LitElement {
          .title-section {
             max-width: 100%;
             height: 90vh;
-            padding-top: 149px;
+            padding-top: 3rem;
             text-align: left;
             background: radial-gradient(circle at 80rem 92rem,#0B4A5D, #080B24);
             .left-more-about {

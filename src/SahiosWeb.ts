@@ -56,9 +56,13 @@ export class SahiosWeb extends LitElement {
     .header-main{
       position: fixed;
     }
+    .body-content{
+      margin: 5rem 0 0 0
+    }
   `;
 
   _handleShowMenu(event: MouseEvent) {
+    console.log("hola mundo")
     this.sidebarOpen = true;
     this.style.overflow = 'hidden';
   }
@@ -66,6 +70,7 @@ export class SahiosWeb extends LitElement {
   _handleHideMenu(event: MouseEvent) {
     this.sidebarOpen = false;
     this.style.overflow = 'scroll';
+    this._changePage(event);
   }
   
   _changePage(event: MouseEvent){
@@ -81,13 +86,13 @@ export class SahiosWeb extends LitElement {
   }
   get tplHomePage(){
     return this.pageActive[0].active ? html`
-      <home-page @sahios-header-menu-clicked="${this._handleShowMenu}"></home-page>
+      <home-page></home-page>
       <home-page-reasons></home-page-reasons>
       <home-page-testimonials></home-page-testimonials>
       <home-page-contact></home-page-contact>
       <sahios-footer></sahios-footer>
       <!--Global Components-->
-      ${this.sidebarOpen ? html`<sahios-sidebar .open="${this.sidebarOpen}" @sahios-sidebar-close-clicked="${this._handleHideMenu}"></sahios-sidebar>`:nothing}
+      ${this.sidebarOpen ? html`<sahios-sidebar .open="${this.sidebarOpen}" @sahios-change-page-header=${this._handleHideMenu} @sahios-sidebar-close-clicked="${this._handleHideMenu}"></sahios-sidebar>`:nothing }
     `: '';
   }
 
@@ -98,20 +103,27 @@ export class SahiosWeb extends LitElement {
 
   get tplServicePage() {
     return this.pageActive[2].active ? html`
-    <service-page class="service-page"></service-page>`: nothing;
+    <service-page class="service-page"></service-page>
+          <!--Global Components-->
+      ${this.sidebarOpen ? html`<sahios-sidebar .open="${this.sidebarOpen}" @sahios-change-page-header=${this._handleHideMenu} @sahios-sidebar-close-clicked="${this._handleHideMenu}"></sahios-sidebar>`:nothing }`: nothing;
   }
 
   get tplMoreAbout() {
     return this.pageActive[3].active ? html `
-    <more-about></more-about>`: nothing;
+    <more-about></more-about>
+          <!--Global Components-->
+      ${this.sidebarOpen ? html`<sahios-sidebar .open="${this.sidebarOpen}" @sahios-change-page-header=${this._handleHideMenu} @sahios-sidebar-close-clicked="${this._handleHideMenu}"></sahios-sidebar>`:nothing }`: nothing;
   }
 
   render() {
     return html`
-      <sahios-header class="header-main"  @sahios-change-page-header=${this._changePage}></sahios-header>
-      ${this.tplHomePage}
-      ${this.tplServicePage}
-      ${this.tplMoreAbout}
+      <sahios-header class="header-main" @sahios-header-menu-clicked="${this._handleShowMenu}" @sahios-change-page-header=${this._changePage}></sahios-header>
+      <div class="body-content">
+        ${this.tplHomePage}
+        ${this.tplServicePage}
+        ${this.tplMoreAbout}
+
+      </div>
     `;
   }
 }
