@@ -102,6 +102,13 @@ export class HomePage extends LitElement {
       align-items: center;
     }
 
+    .hilghlight {
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(4px);
+      border-radius: 12px;
+      color: white;
+    }
+
     @media screen and (max-width: 345px) {
       div {
         flex-direction: column;
@@ -289,13 +296,14 @@ export class HomePage extends LitElement {
             <h1>
               Sabemos como <b>tratar</b> a tu aliado del trabajo
             </h1>
-            <p>
-              Nos especializamos en el cuidado y mantenimiento de equipos de computo
-              y telefonía movil, somos expertos en soluciones digitales
+            <p class="hilghlight">
+              Nuestro equipo de expertos también desarrolla soluciones digitales modernas que impulsan la eficiencia, la productividad y la transformación tecnológica de tu negocio. 🚀
             </p>
             <div>
               <button class="primary">Empezar ahora</button>
-              <button class="secundary">Contacto</button>
+              <button class="secundary">
+                <a></a>
+                Contacto</button>
             </div>
           </section>
           <section class="right-section">

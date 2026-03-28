@@ -294,30 +294,39 @@ export class HomePageReasons extends LitElement {
     return html`
       <main>
         <section class="left-section">
-          <h1>Te damos algunas razones para <b>elegirnos</b></h1>
+          <h1>Beneficios que obtienes al <b>trabajar con nosotros</b></h1>
           <p>
-            Nos encanta ayudarte con tus aliados del trabajo, te decimos algunas razones por las que debes confiar en nosotros
+            Nos gusta ser el aliado tecnológico que impulsa tu productividad. Estas son algunas razones por las que puedes confiar en nosotros para cuidar tus equipos y ofrecerte soluciones digitales eficientes y personalizadas. ⚡
           </p>
 
           <div class="reason">
             <img class="icon" src="../../../assets/icon-checkmark.svg" alt="checkmark">
             <div>
               <h3>Calidad</h3>
-              <p>Nos encanta darte el mejor servicio por lo que todos nuestros procesos estan basados en los mas altos estandares de calidad, para brindarte la atencion deseada</p>
+              <p>
+                Nos comprometemos a brindarte un servicio excepcional, por lo que cada uno de nuestros procesos está basado en altos estándares de calidad y buenas prácticas profesionales. <br><br>
+                Nuestro objetivo es ofrecerte una atención eficiente, confiable y personalizada, asegurando que cada solución cumpla con tus expectativas y contribuya a mejorar tu experiencia y resultados.
+              </p>
             </div>
           </div>
           <div class="reason">
             <img class="icon" src="../../../assets/icon-clock.svg" alt="checkmark">
             <div>
               <h3>Velocidad</h3>
-              <p>La velocidad es una de nuestras mejores caracteristicas sin descuidar la calidad, por lo que la solucion a tu problema sera en menos de lo que esperas</p>
+              <p>
+                La rapidez es una de nuestras principales fortalezas, sin comprometer en ningún momento la calidad de nuestro trabajo. <br><br>
+                Nos enfocamos en ofrecer soluciones eficientes y bien ejecutadas, optimizando cada proceso para que la respuesta a tu necesidad llegue en menos tiempo del que imaginas, siempre manteniendo altos estándares de desempeño y confiabilidad.
+              </p>
             </div>
           </div>
           <div class="reason">
             <img class="icon" src="../../../assets/icon-money.svg" alt="checkmark">
             <div>
               <h3>Precio</h3>
-              <p>Sabemos que siempre se busca el mejor precio del mercado, es por eso que nuestros servicios tienen el costo exacto para cuidar tu bolsillo</p>
+              <p>
+                Entendemos que encontrar el mejor equilibrio entre calidad y precio es fundamental. <br><br>
+                Por ello, ofrecemos servicios con costos justos y competitivos, cuidadosamente definidos para brindarte soluciones de alto valor sin afectar tu presupuesto, asegurando que recibas un servicio confiable, eficiente y accesible que realmente cuide tu inversión. 💰  
+              </p>
             </div>
           </div>
         </section>

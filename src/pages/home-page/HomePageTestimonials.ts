@@ -158,32 +158,16 @@ export class HomePageTestimonials extends LitElement {
         Testimonio de nuestros clientes
       </h1>
       <p>
-        Creemos que la mejor forma de medir el exito es escuchar la opinion de aquellos que han confiado en nosotros
+        Creemos que la mejor forma de medir el éxito es escuchar la opinión de quienes han confiado en nosotros, ya que sus experiencias reflejan el impacto real de nuestro trabajo, la calidad de nuestro servicio y el compromiso que ponemos en cada proyecto. Sus testimonios nos inspiran a seguir mejorando, innovando y ofreciendo soluciones personalizadas que realmente aporten valor, generen confianza y contribuyan al crecimiento de cada cliente que decide trabajar con nuestro equipo. ✨
       </p>
       <main class="container">
         <article>
           <img src="../../../assets/aldo.jpg" alt="Aldo">
           <div>
-            <h3>Aldo Aldaco</h3>
-            <span>Cliente 2021</span>
+            <h3>Alberto Aldaco</h3>
+            <span>Desarrollo de software a la medida</span>
           </div>
-          <p>Estuvo muy chido el servicio, son super profesionales y a tiempo. excelente servicio 5 estrellas</p>
-        </article>
-        <article>
-          <img src="../../../assets/aldo.jpg" alt="Aldo">
-          <div>
-            <h3>Aldo Aldaco</h3>
-            <span>Cliente 2021</span>
-          </div>
-          <p>Estuvo muy chido el servicio, son super profesionales y a tiempo. excelente servicio 5 estrellas</p>
-        </article>
-        <article>
-          <img src="../../../assets/aldo.jpg" alt="Aldo">
-          <div>
-            <h3>Aldo Aldaco</h3>
-            <span>Cliente 2021</span>
-          </div>
-          <p>Estuvo muy chido el servicio, son super profesionales y a tiempo. excelente servicio 5 estrellas</p>
+          <p>El servicio fue completamente personalizado desde el primer contacto. El equipo entendió perfectamente nuestras necesidades y transformó nuestra idea en una solución digital moderna, rápida y enfocada en resultados.</p>
         </article>
       </main>
       <p class="legend">* información obtenida de <b>Google Maps</b></p>

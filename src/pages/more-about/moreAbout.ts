@@ -21,18 +21,18 @@ export class MoreAbout extends LitElement {
     this.dataInfo = [
       {
         icon: "../../../assets/icon-checkmark.svg",
-        title: "garantia",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
+        title: "Garantia",
+        description: "Nuestra garantía está diseñada para ofrecer confianza y respaldo a nuestros clientes, al mismo tiempo que establece condiciones claras y justas que permitan una relación profesional transparente y equilibrada para ambas partes."
       },
       {
         icon: "../../../assets/icon-clock.svg",
         title: "Servicio Rapido",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
+        description: "Nos comprometemos a desarrollar soluciones de software optimizadas para ofrecer tiempos de carga adecuados y un funcionamiento ágil, considerando las buenas prácticas de desarrollo, optimización de recursos y estándares actuales de la industria. Nuestro objetivo es brindar aplicaciones y sitios web que ofrezcan una experiencia fluida, eficiente y confiable para los usuarios finales."
       },
       {
         icon: "../../../assets/icon-money.svg",
-        title: "No cobramos por cotizacion ",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
+        title: "Cotización",
+        description: "Todas nuestras cotizaciones se elaboran con base en el análisis de los requerimientos proporcionados por el cliente, considerando el alcance del proyecto, nivel de complejidad, tiempo estimado de desarrollo, tecnologías a utilizar y recursos necesarios para ofrecer una solución funcional, estable y de calidad."
       },
     ]
     this.listInfoServices = [
@@ -319,7 +319,6 @@ export class MoreAbout extends LitElement {
   `;
 
   render() {
-    console.log(this.dataInfo)
     return html`
       <section class="title-section">
         <div class="left-more-about">
@@ -352,8 +351,7 @@ export class MoreAbout extends LitElement {
       <section class="who-is-about">
         <div class="text-who-is-about">
             <h1>Quienes somos?</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus, neque et pretium placerat, mi lorem tincidunt libero, a venenatis libero nulla sit amet ex. Sed sapien velit, congue ac condimentum nec, iaculis pharetra dolor. Proin eget gravida mi. Quisque sagittis tristique accumsan. Nunc maximus rutrum eros, non sodales ipsum lobortis non. Maecenas at nulla augue. Vivamus eget semper sem.</p>
-            <p>Morbi cursus tincidunt nisi, a maximus sem auctor sit amet. Morbi ullamcorper dictum lectus, non tincidunt est pulvinar id. Aenean sed orci non enim blandit semper at a metus. Vestibulum justo sem, aliquet nec odio eget, mollis gravida est. Phasellus feugiat tempus massa, eget tincidunt erat feugiat ut. Mauris venenatis, lectus nec consectetur finibus, quam purus finibus est, in mollis eros nibh sed lorem. Vestibulum iaculis luctus lectus a iaculis. Donec luctus odio lobortis ligula posuere, et tincidunt felis lobortis. Sed sem augue, rutrum vel odio in, accumsan finibus leo. Pellentesque urna erat, pellentesque et pulvinar id, commodo eget urna. Proin vitae tristique justo. Vivamus scelerisque enim erat, ut fringilla nisl congue eu. Fusce pharetra tortor sit amet sodales consectetur. Vivamus condimentum mauris a blandit tristique. Phasellus dolor ante, lobortis eget elit sed, vehicula tincidunt purus. Nulla nec ipsum suscipit, malesuada leo convallis, sollicitudin erat.</p>
+            <p>Somos un equipo de profesionales apasionados por la tecnología y comprometidos con ofrecer soluciones confiables, prácticas y adaptadas a las necesidades de cada cliente. Nos especializamos en el cuidado, mantenimiento y optimización de equipos de cómputo y telefonía móvil, así como en el desarrollo de soluciones digitales que ayudan a personas y empresas a mejorar su productividad y aprovechar al máximo sus herramientas tecnológicas.</p>
         </div>
         <div class="decorative-image">
             <img src="../../assets/more-about-who-we-are.svg">
@@ -364,9 +362,6 @@ export class MoreAbout extends LitElement {
         <div class="team-image">
           <div class="image-our-team">
             <img src="../../assets/more-about-who-we-are.svg">
-          </div>
-          <div class="image-our-team">
-              <img src="../../assets/more-about-who-we-are.svg">
           </div>
           <div class="image-our-team">
               <img src="../../assets/more-about-who-we-are.svg">

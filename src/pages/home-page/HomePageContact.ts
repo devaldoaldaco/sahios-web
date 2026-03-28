@@ -48,6 +48,13 @@ export class HomePageContact extends LitElement {
       background: white;
       color: #090D2B;
       border: none;
+      .anchor {
+        text-decoration: none;
+      }
+    }
+
+    button.primary a {
+     color: #090D2B; 
     }
 
     button.secondary {
@@ -56,9 +63,18 @@ export class HomePageContact extends LitElement {
       border: 1px solid white;
     }
 
+    button.secondary a {
+      color: white; 
+    }
+
     .left-section {
       margin-left:10px;
       display: block;
+    }
+
+    .anchor {
+      text-decoration: none;
+      outline: none;
     }
 
     .right-section {
@@ -72,6 +88,8 @@ export class HomePageContact extends LitElement {
     img {
       height: 260px;
     }
+
+    
 
     @media screen and (max-width: 345px) {
     }
@@ -210,11 +228,17 @@ export class HomePageContact extends LitElement {
       <section class="left-section">
         <h1>Contactanos y recibe tu
           servicio personalizado</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,</p>
+        <p>Contáctanos hoy y recibe un servicio completamente personalizado, diseñado para adaptarse a las necesidades específicas de tu proyecto, tus objetivos y tu visión. Analizamos cada detalle para ofrecerte una solución estratégica, moderna y efectiva que te ayude a destacar, optimizar resultados y llevar tu presencia digital al siguiente nivel con el respaldo de un equipo comprometido con tu éxito.</p>
 
         <div>
-          <button class="primary">WhatsApp</button>
-          <button class="secondary">Comunicate via llamada</button>
+          <a class="primary">
+            <a class="anchor" href="https://wa.me/5531139589?text=Hola%20quiero%20información">
+              Enviar WhatsApp</a>
+          </button>
+          
+          <button class="secondary" aria-label="Llamar al número 2411260175">
+            <a class="anchor" href="tel: 2411260175"> Comunicate vía llamada</a>
+          </button>
         </div>
       </section>
 
