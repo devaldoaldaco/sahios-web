@@ -1,0 +1,13 @@
+{
+  "name": "Sahios software & hardware",
+  "short_name": "Sahios",
+  "description": "Sahios es una empresa dedicada a la tecnologia, te podemos ayudar a dar mantenimiento a tus equipos de computo y telefonia movil, asi tambien a crear soluciones de software",
+  "start_url": "/",
+  "background_color": "#080b24",
+  "theme_color": "#080b24",
+  "icons": [{
+    "src": "assets/icon-logo.svg",
+    "sizes": "256x256",
+    "type": "image/svg"
+  }]
+}
