@@ -7,14 +7,21 @@ export class HomePageTestimonials extends LitElement {
     :host {
       display: block;
       height: auto;
-      width: 100%;
+      max-width: 100%;
       color: white;
     }
 
-    img {
+    span.user-name {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 50%;
-      height: 5.5rem;
-      width: 5.5rem;
+      height: 5rem;
+      width: 5rem;
+      background-color: #2A2D45;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 2rem;
     }
 
     h1 {
@@ -59,8 +66,9 @@ export class HomePageTestimonials extends LitElement {
       align-items: center;
     }
 
-    article:nth-child(2), article:nth-child(3) {
+    article:nth-child(1), article:nth-child(3) {
       background: #0F1330;
+      display: none;
     }
 
     article h3 {
@@ -120,6 +128,10 @@ export class HomePageTestimonials extends LitElement {
         margin-top: 3rem;
         margin-bottom: 3rem;
       }
+
+      article:nth-child(1), article:nth-child(3) {
+        display: flex;
+      }
     }
 
     @media screen and (max-width: 982px) {
@@ -158,17 +170,37 @@ export class HomePageTestimonials extends LitElement {
         Testimonio de nuestros clientes
       </h1>
       <p>
-        Creemos que la mejor forma de medir el éxito es escuchar la opinión de quienes han confiado en nosotros, ya que sus experiencias reflejan el impacto real de nuestro trabajo, la calidad de nuestro servicio y el compromiso que ponemos en cada proyecto. Sus testimonios nos inspiran a seguir mejorando, innovando y ofreciendo soluciones personalizadas que realmente aporten valor, generen confianza y contribuyan al crecimiento de cada cliente que decide trabajar con nuestro equipo. ✨
+        La mejor forma de medir el éxito es escuchar la opinión de quienes han confiado en nosotros, ya que sus experiencias reflejan el impacto real de nuestro trabajo. ✨
       </p>
       <main class="container">
+
         <article>
-          <img src="../../../assets/aldo.jpg" alt="Aldo">
+          <span class="user-name">V</span>
           <div>
-            <h3>Alberto Aldaco</h3>
-            <span>Desarrollo de software a la medida</span>
+            <h3>Violeta Garcia</h3>
+            <span>Reparación equipo celular</span>
           </div>
-          <p>El servicio fue completamente personalizado desde el primer contacto. El equipo entendió perfectamente nuestras necesidades y transformó nuestra idea en una solución digital moderna, rápida y enfocada en resultados.</p>
+          <p>A ojos cerrados recomiendo ampliamente el trabajo tran profesional de Sahios Mantenimiento Software, Hardware ...... en Google busque al mejor y obvio Jmas se equivo en recomendarmelos.</p>
         </article>
+        
+        <article>
+          <span class="user-name">D</span>
+          <div>
+            <h3>Detzani Perez</h3>
+            <span>Mantenimiento preventivo</span>
+          </div>
+          <p>Elegi las 4 opciones por que para mi son de vital importancia ya que la atención fue una de  las  mejores uno se siente en confianza en dejar su equipo en manos de un experto...</p>
+        </article>
+
+        <article>
+          <span class="user-name">G</span>
+          <div>
+            <h3>Gonzalo Hernandez</h3>
+            <span>Reparación equipo de computo</span>
+          </div>
+          <p>Buena atención.</p>
+        </article>
+        
       </main>
       <p class="legend">* información obtenida de <b>Google Maps</b></p>
 

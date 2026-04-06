@@ -28,7 +28,7 @@ export default {
     }),
     copy({
       targets: [
-        { src: 'assets/*/', dest: 'public/assets/' }
+        { src: 'assets/**/*', dest: 'public/assets/' }
       ]
     }),
     /** Resolve bare module imports */

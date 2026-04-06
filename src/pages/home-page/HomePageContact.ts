@@ -9,12 +9,12 @@ export class HomePageContact extends LitElement {
       flex-direction: column;
       justify-content: center;
       background: #9BA0AA;
-      width: 100%;
+      max-width: 100%;
       color: white;
     }
 
     h1 {
-      max-width: 31.25rem;
+      max-width: calc(100% - 2rem);
       margin: 0;
       font-size: 1.75rem;
       padding: 3rem 1rem 2rem;
@@ -22,7 +22,7 @@ export class HomePageContact extends LitElement {
     }
 
     p {
-      max-width: 37.5rem;
+      max-width: calc(100% - 2rem);
       margin: 0;
       font-size: 1rem;
       padding: 0 1rem 1rem;
@@ -32,7 +32,8 @@ export class HomePageContact extends LitElement {
     }
 
     div {
-      margin: 1rem 0 2rem;
+      padding: 1rem 0 2rem;
+      max-width: 100%;
     }
 
     button {
@@ -50,6 +51,7 @@ export class HomePageContact extends LitElement {
       border: none;
       .anchor {
         text-decoration: none;
+        color: #46F68A;
       }
     }
 
@@ -68,25 +70,25 @@ export class HomePageContact extends LitElement {
     }
 
     .left-section {
-      margin-left:10px;
-      display: block;
+      max-width: 100%;
     }
 
     .anchor {
       text-decoration: none;
       outline: none;
+      color: #46F68A;
     }
 
     .right-section {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 261px;
       overflow: hidden;
     }
 
     img {
-      height: 260px;
+      height: 100%;
+      width: 100%;
     }
 
     
@@ -137,12 +139,16 @@ export class HomePageContact extends LitElement {
 
       .left-section {
         width: 65%;
+        flex: 1;
       }
 
       .right-section {
         height: 100%;
         width: 35%;
-        align-items: center;
+        flex: 1;
+        display: flex;
+        justify-content: center; /* centra horizontalmente */
+        align-items: center; /* centra verticalmente */
       }
 
       p {
@@ -174,17 +180,19 @@ export class HomePageContact extends LitElement {
         display: flex;
         justify-content: start;
         margin: 0;
-        padding: 0 3rem 3rem;
+        padding: 1rem 0 2rem;
+        max-width: 100%;
       }
 
       img {
-        height: 280px;
+        max-width: 90%;
       }
     }
 
     @media screen and (min-width: 1201px) {
       h1 {
         padding: 5rem 5rem 3rem;
+        font-size: 2.8rem;
       }
 
       p {
@@ -193,11 +201,10 @@ export class HomePageContact extends LitElement {
 
       div {
         display: flex;
-        justify-content: start;
+        justify-content: space-between;
         margin: 0;
         padding: 0 5rem 3rem;
       }
-
     }
 
     @media screen and (min-width: 1400px) {
@@ -211,7 +218,7 @@ export class HomePageContact extends LitElement {
 
       div {
         display: flex;
-        justify-content: start;
+        align-items: center;
         margin: 0;
         padding: 0 9rem 3rem;
       }
@@ -219,7 +226,6 @@ export class HomePageContact extends LitElement {
       .left-section {
         width: 50%;
       }
-
     }
   `;
 
@@ -243,7 +249,8 @@ export class HomePageContact extends LitElement {
       </section>
 
       <section class="right-section">
-          <img src="../../../assets/laidy-contact.svg" alt="Imagen de operadora telefonica">
+
+          <img src="../../../assets/operadora.png" alt="Imagen de operadora telefonica">
       </section>
     `;
   }

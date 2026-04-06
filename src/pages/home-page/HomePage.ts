@@ -9,24 +9,25 @@ export class HomePage extends LitElement {
   static styles = css`
     :host {
       display: block;
-      min-height: 100vh;
-      width: 100%;
+      height: 100vh !important;
+      max-width: 100%;
       overflow: hidden;
       position: relative;
     }
 
     main {
-      min-height: calc(100% - 5rem);
+      height: calc(100vh - 5rem);
+      max-width: 100%;
       background: rgb(8,11,36);
-      background: linear-gradient(150deg, rgb(8, 11, 36) 20%, rgb(11, 74, 93) 73%);
       color: white;
       text-align: left;
       overflow: hidden;
       display: flex;
+      flex-direction: column;
     }
 
     h1 {
-      max-width: 31.25rem;
+      max-width: 100%;
       margin: 0;
       font-size: 2.188rem;
       padding: 3rem 1rem 1rem;
@@ -52,8 +53,6 @@ export class HomePage extends LitElement {
       flex-wrap: wrap;
       padding: 1rem;
     }
-
-
 
     button {
       height: 3.125rem;
@@ -94,19 +93,13 @@ export class HomePage extends LitElement {
 
     .left-section, .right-section {
       z-index: 1;
+      max-width: 100%;
     }
 
     .right-section {
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-
-    .hilghlight {
-      background: rgba(0,0,0,0.45);
-      backdrop-filter: blur(4px);
-      border-radius: 12px;
-      color: white;
     }
 
     @media screen and (max-width: 345px) {
@@ -236,7 +229,9 @@ export class HomePage extends LitElement {
     }
 
     @media screen and (max-width: 1054px) {
-
+      main {
+        flex-direction: row;
+      }
     }
 
     @media screen and (min-width: 1201px) {
@@ -245,11 +240,15 @@ export class HomePage extends LitElement {
       }
 
       p {
-        padding: 1.5rem 5rem 1.5rem;
+        padding: 2.5rem 5rem 2.5rem;
       }
 
       div {
         padding: 1.5rem 5rem 1.5rem;
+      }
+
+      main {
+        flex-direction: row;
       }
 
       .left-section {
@@ -274,6 +273,10 @@ export class HomePage extends LitElement {
         max-width: 45rem;
       }
 
+      main {
+        flex-direction: row;
+      }
+
       img.first {
         width: 52%;
       }
@@ -296,7 +299,7 @@ export class HomePage extends LitElement {
             <h1>
               Sabemos como <b>tratar</b> a tu aliado del trabajo
             </h1>
-            <p class="hilghlight">
+            <p>
               Nuestro equipo de expertos también desarrolla soluciones digitales modernas que impulsan la eficiencia, la productividad y la transformación tecnológica de tu negocio. 🚀
             </p>
             <div>
@@ -309,8 +312,8 @@ export class HomePage extends LitElement {
           <section class="right-section">
             <sahios-form></sahios-form>
           </section>
+          <img class="first" src="../../../assets/background-home-desktop.svg" alt="Home image">
         </main>
-        <img class="first" src="../../../assets/background-home-desktop.svg" alt="Home image">
         <img class="second" src="../../../assets/background-home-mobile.svg" alt="Home image">
     `;
   }

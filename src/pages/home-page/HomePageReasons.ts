@@ -296,7 +296,7 @@ export class HomePageReasons extends LitElement {
         <section class="left-section">
           <h1>Beneficios que obtienes al <b>trabajar con nosotros</b></h1>
           <p>
-            Nos gusta ser el aliado tecnológico que impulsa tu productividad. Estas son algunas razones por las que puedes confiar en nosotros para cuidar tus equipos y ofrecerte soluciones digitales eficientes y personalizadas. ⚡
+            Nos gusta ser el aliado tecnológico que impulsa tu productividad. Estas son algunas razones por las que puedes confiar en nosotros. ⚡
           </p>
 
           <div class="reason">
@@ -304,7 +304,6 @@ export class HomePageReasons extends LitElement {
             <div>
               <h3>Calidad</h3>
               <p>
-                Nos comprometemos a brindarte un servicio excepcional, por lo que cada uno de nuestros procesos está basado en altos estándares de calidad y buenas prácticas profesionales. <br><br>
                 Nuestro objetivo es ofrecerte una atención eficiente, confiable y personalizada, asegurando que cada solución cumpla con tus expectativas y contribuya a mejorar tu experiencia y resultados.
               </p>
             </div>
@@ -314,7 +313,6 @@ export class HomePageReasons extends LitElement {
             <div>
               <h3>Velocidad</h3>
               <p>
-                La rapidez es una de nuestras principales fortalezas, sin comprometer en ningún momento la calidad de nuestro trabajo. <br><br>
                 Nos enfocamos en ofrecer soluciones eficientes y bien ejecutadas, optimizando cada proceso para que la respuesta a tu necesidad llegue en menos tiempo del que imaginas, siempre manteniendo altos estándares de desempeño y confiabilidad.
               </p>
             </div>
@@ -324,8 +322,7 @@ export class HomePageReasons extends LitElement {
             <div>
               <h3>Precio</h3>
               <p>
-                Entendemos que encontrar el mejor equilibrio entre calidad y precio es fundamental. <br><br>
-                Por ello, ofrecemos servicios con costos justos y competitivos, cuidadosamente definidos para brindarte soluciones de alto valor sin afectar tu presupuesto, asegurando que recibas un servicio confiable, eficiente y accesible que realmente cuide tu inversión. 💰  
+                Ofrecemos servicios con costos justos y competitivos, cuidadosamente definidos para brindarte soluciones de alto valor sin afectar tu presupuesto, asegurando que recibas un servicio confiable, eficiente y accesible que realmente cuide tu inversión. 💰  
               </p>
             </div>
           </div>

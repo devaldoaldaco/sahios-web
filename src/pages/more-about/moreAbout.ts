@@ -27,12 +27,12 @@ export class MoreAbout extends LitElement {
       {
         icon: "../../../assets/icon-clock.svg",
         title: "Servicio Rapido",
-        description: "Nos comprometemos a desarrollar soluciones de software optimizadas para ofrecer tiempos de carga adecuados y un funcionamiento ágil, considerando las buenas prácticas de desarrollo, optimización de recursos y estándares actuales de la industria. Nuestro objetivo es brindar aplicaciones y sitios web que ofrezcan una experiencia fluida, eficiente y confiable para los usuarios finales."
+        description: "Nos comprometemos a desarrollar soluciones de software optimizadas para ofrecer tiempos de carga adecuados y un funcionamiento ágil, considerando las buenas prácticas de desarrollo, optimización de recursos y estándares actuales de la industria."
       },
       {
         icon: "../../../assets/icon-money.svg",
         title: "Cotización",
-        description: "Todas nuestras cotizaciones se elaboran con base en el análisis de los requerimientos proporcionados por el cliente, considerando el alcance del proyecto, nivel de complejidad, tiempo estimado de desarrollo, tecnologías a utilizar y recursos necesarios para ofrecer una solución funcional, estable y de calidad."
+        description: "Todas nuestras cotizaciones se elaboran con base en el análisis de los requerimientos proporcionados por el cliente, considerando el alcance del proyecto, nivel de complejidad, tiempo estimado de desarrollo, tecnologías a utilizar y recursos necesarios."
       },
     ]
     this.listInfoServices = [

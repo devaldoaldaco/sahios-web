@@ -120,9 +120,8 @@ export class SahiosWeb extends LitElement {
       <sahios-header class="header-main" @sahios-header-menu-clicked="${this._handleShowMenu}" @sahios-change-page-header=${this._changePage}></sahios-header>
       <div class="body-content">
         ${this.tplHomePage}
-        ${this.tplServicePage}
-        ${this.tplMoreAbout}
-
+        <!-- ${this.tplServicePage}
+        ${this.tplMoreAbout} -->
       </div>
     `;
   }
