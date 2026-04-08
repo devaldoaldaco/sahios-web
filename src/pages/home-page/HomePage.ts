@@ -5,7 +5,6 @@ import '../../components/sahios-form/SahiosForm';
 
 @customElement('home-page')
 export class HomePage extends LitElement {
-  @property({ type: String }) title = 'Home';
   static styles = css`
     :host {
       display: block;
@@ -62,12 +61,18 @@ export class HomePage extends LitElement {
       border-radius: 0.313rem;
       letter-spacing: 0.02rem;
       padding: 0;
+      cursor: pointer;
+    }
+
+    button:active {
+      background-color: black
     }
 
     button.primary {
-      background: #46F68A;
+      background: #46f68a;
       color: #080D25;
       border: none;
+      display: none;
     }
 
     button.secundary {
@@ -206,6 +211,10 @@ export class HomePage extends LitElement {
       img.second {
         display: none;
       }
+      
+      button.primary {
+        display: block;
+      }
     }
 
     @media screen and (min-width: 1024px) {
@@ -292,6 +301,15 @@ export class HomePage extends LitElement {
     }
   `;
 
+  _start() {
+    const form: any = this?.shadowRoot?.querySelector('sahios-form');
+    form.shadowRoot.querySelector('#name').focus();
+  }
+
+  _goToContact() {
+    this.dispatchEvent(new CustomEvent('navigate-to-contact'));
+  }
+
   render() {
     return html`
         <main>
@@ -303,8 +321,8 @@ export class HomePage extends LitElement {
               Nuestro equipo de expertos también desarrolla soluciones digitales modernas que impulsan la eficiencia, la productividad y la transformación tecnológica de tu negocio. 🚀
             </p>
             <div>
-              <button class="primary">Empezar ahora</button>
-              <button class="secundary">
+              <button @click="${this._start}" class="primary">Empezar ahora</button>
+              <button @click="${this._goToContact}" class="secundary">
                 <a></a>
                 Contacto</button>
             </div>

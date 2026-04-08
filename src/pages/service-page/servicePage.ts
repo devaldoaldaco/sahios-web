@@ -2,7 +2,7 @@ import { LitElement, html, css, svg, nothing, PropertyDeclarations } from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import '../../components/sahios-footer/SahiosFooter';
 import './bannerComposition'
-import '../../pages/home-page/HomePageContact'
+import '../home-page/HomePageContact'
 @customElement('service-page')
 export class ServicePage extends LitElement {
   
@@ -20,93 +20,155 @@ export class ServicePage extends LitElement {
     this.dataInfo = [
       {
         icon: "../../../assets/icon-checkmark.svg",
-        title: "garantia",
+        title: "Garantía",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
       },
       {
         icon: "../../../assets/icon-clock.svg",
-        title: "Servicio Rapido",
+        title: "Servicio Rápido",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
       },
       {
         icon: "../../../assets/icon-money.svg",
-        title: "No cobramos por cotizacion ",
+        title: "Cotización sin costo",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
       },
     ]
     this.listInfoServices = [
       {
-        icon: "../../../assets/icon-checkmark.svg",
+        icon: "../../../assets/windows.png",
         title: "Windows",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
+        description: ""
       },
       {
-        icon: "../../../assets/icon-checkmark.svg",
-        title: "Apple IOS",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
+        icon: "../../../assets/apple.png",
+        title: "Apple",
+        description: ""
       },
       {
-        icon: "../../../assets/icon-checkmark.svg",
-        title: "Tablets",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
-      },
-      {
-        icon: "../../../assets/icon-checkmark.svg",
-        title: "Smartphones",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
-      },
-      {
-        icon: "../../../assets/icon-checkmark.svg",
+        icon: "../../../assets/android.png",
         title: "Android",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
+        description: ""
       },
       {
-        icon: "../../../assets/icon-checkmark.svg",
-        title: "PC components",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
+        icon: "../../../assets/huawei.png",
+        title: "Huawei",
+        description: ""
+      },
+      {
+        icon: "../../../assets/mobile.png",
+        title: "Smartphones",
+        description: ""
+      },
+      
+      {
+        icon: "../../../assets/desktop.png",
+        title: "CAD",
+        description: ""
       },
     ]
     this.careComputerEquipment = [
       {
         image: "../../../assets/care-computer-equipment.svg",
-        title: "conoce todos nuestros servicios",
-        greenLetter: 'especializados',
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
-        
-      },
-      {
-        image: "../../../assets/care-computer-equipment.svg",
-        title: "conoce todos nuestros servicios",
-        greenLetter: 'especializados',
+        title: "Conoce todos nuestros ",
+        greenLetter: 'servicios',
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus lorem quis ligula efficitur tempor. Sed quis elit sit amet ipsum pulvinar feugiat non eget sem. Donec nec volutpat ex, et finibus nibh. Fusce finibus,"
       },
     ]
   }
 
   static styles = css`
-      *{
+      :host {
+        display: block;
+        height: fit-content;
+        height: 100vh;
+        overflow: auto;
+      }
+
+      * {
         margin: 0;
         padding: 0;
       }
 
+      .right-section {
+        display: none;
+      }
+
+      .left-service-page {
+        padding: 1rem;
+      }
+
+      .ask-for-a-quote {
+        padding: 1rem;
+      }
+
+      .green-color-title {
+        color: #46F68A;
+      }
+
+      .text-title-service-page {
+        margin-top: 2rem;
+      }
+
+      .second-section {
+        h2 {
+          margin: 1rem 0 3rem 0;
+        }
+      }
+      
+
+      .flex {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+      }
+
+      banner-composition.special {
+        margin: 0 auto;
+        width: 90px;
+        height: 90px;
+      } 
+
+      .icon-link {
+        width: 3rem;
+        height: 3rem;
+        margin-bottom: 3rem;
+        text-align: right;
+        display: inline-block;
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      /* Tablet: 2 columns */
+      @media (min-width: 768px) {
+        .flex {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      } 
+
       @media(min-width: 500px) {
         .title-section {
           max-width: 100%;
-          padding-top: 3rem;
+          padding: 3rem 0 0 0;
           background: radial-gradient(closest-side at 55% 55%, #0B4A5D, #080B24);
           .left-service-page {
             height: 35rem;
-            padding: 0rem 50% 0 8%;
             background-image: url(../../assets/service-image.svg);
             background-repeat: no-repeat;
             background-position-x: 100%;
-            background-size: 50%;
+            background-position-y: 140%;
+            background-size: 80%;
             flex-direction: column;
             text-align: left;
             .title-service-page {
-              font-size: 60px;
               font-weight: bold;
-              letter-spacing: -3px;
               br:nth-child(2){
                 display: none;
               }
@@ -114,14 +176,16 @@ export class ServicePage extends LitElement {
                 color: #46F68A;
               }
             }
-            p {
-              margin-top: 16px;
-              padding-right: 33%;
-              font-size: 16px;
-            }
           }
         }
+
+        .text-title-service-page {
+          width: 100%;
+          margin-top: 2rem;
+        }
         .second-section {
+          padding: 0;
+
           .card-container {
             display: flex;
             flex-direction: row;
@@ -136,11 +200,9 @@ export class ServicePage extends LitElement {
             margin: 100px 0 300px 0;
           }
           .title-section-two {
-            text-align: left;
+            text-align: center;
             font-size: 35px;
-            margin: 107px 50% 80px 8%;
-            margin-left: 8%;
-            margin-right: 50%
+            margin-top: 5rem;
           }
           .ask-for-a-quote {
             background-color:#2B3055;
@@ -158,7 +220,7 @@ export class ServicePage extends LitElement {
               margin: 68px 20px 0 35px;
             }
             button {
-              height: 60px;
+              min-height: 60px;
               width: 400px;
               border-radius: 8px;
               background-color: #46F68A;
@@ -168,30 +230,36 @@ export class ServicePage extends LitElement {
             }
           }
         }
+
+        p {
+          max-width: 34.375rem;
+          padding: 1.5rem 3rem;
+          font-size: 1.563rem;
+          letter-spacing: 0.05rem;
+          line-height: 1.563rem;
+        }
       }
+
       @media(max-width: 500px) {
          .title-section {
             max-width: 100%;
-            height: 80vh;
-            padding-top: 3rem;
+            height: calc(100vh - 3rem);
+            padding-top: 2rem;
             text-align: left;
-            background: radial-gradient(circle at 80rem 92rem,#0B4A5D, #080B24);
+            background: radial-gradient(circle at 80rem 92rem, #0B4A5D, #080B24);
             .left-service-page {
               background-image: url("../../assets/service-image.svg");
               background-repeat: no-repeat;
-              background-size: cover;
+              background-size: contain;
               background-position: center;
-              background-position-y: 18rem;
+              background-position-x: 60%;
+              background-position-y: 70%;
               height:100%
-            }
-            .text-title-service-page {
-              margin: 0 31px 0 41px;
             }
             .title-service-page {
               font-size: 40px;
               font-weight: bold;
-              letter-spacing: -3px;
-              margin: 0 31px 35px 41px;
+
               br:nth-child(3){
                 display: none;
               }
@@ -214,7 +282,9 @@ export class ServicePage extends LitElement {
             }
           }
 
-          .second-section{
+          .second-section {
+            padding: 1rem 0 1rem 0;
+
             .title-section-two{
               font-size: 40px;
               margin: 55px 35px 45px 25px;
@@ -225,95 +295,199 @@ export class ServicePage extends LitElement {
               letter-spacing: -2px;
             }
             .ask-for-a-quote {
-              background-color:#2B3055;
-              height: 421px;
+              background-color: #2B3055;
               display: flex;
               flex-direction: column;
               text-align: left;
               justify-content: space-between;
-              border-radius: 8px;
+
               p {
-                margin: 0px 35px 0 35px;
-              } 
-              h2 {
-                margin: 68px 20px 0 35px;
+                margin: 0.5rem 0;
               }
+
               button {
                 height: 60px;
                 border-radius: 8px;
                 background-color: #46F68A;
-                margin: 0 35px 73px 35px;
+                margin: 1rem 0 1rem 0;
                 font-size: 18px;
                 font-weight: bold;
               }
             }
             .care-your-pc {
               h2 {
-                margin: 2.8rem 42px 0 42px;
+                margin: 4rem 0;
               }
             }
           }
       }
+
+      @media(min-width: 762px) {
+        p {
+          max-width: 34.375rem;
+          padding: 1.5rem 3rem;
+          font-size: 1.563rem;
+          letter-spacing: 0.05rem;
+          line-height: 1.563rem;
+        }
+
+        .left-service-page {
+          height: auto;
+          background-position-x: 80%;
+          background-position-y: 18rem;
+
+          background-size: cover;
+
+          h1 {
+            padding: 1.5rem 3rem;
+          }
+        }
+
+        .flex {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      @media(min-width: 1024px) {
+        p {
+          max-width: 34.375rem;
+          padding: 1.5rem 3rem;
+          font-size: 1.563rem;
+          letter-spacing: 0.05rem;
+          line-height: 1.563rem;
+        }
+
+        .left-service-page {
+          height: auto;
+        }
+
+        .flex {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      @media screen and (min-width: 1400px) {
+        .img-services {
+          display: block;
+          width: 50%;
+        }
+
+        h1, p {
+          padding-left: 10rem;
+        }
+
+        .left-service-page {
+          width: 70%;
+          height: auto;
+          background-position-x: 100%;
+          background-position-y: 18rem;
+          background-repeat: repeat;
+          background: none;
+
+          h1 {
+            padding-left: 10rem;
+          }
+
+        }
+
+        .flex {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        .title-section {
+          display: flex;
+          align-items: center;
+
+          .right-section {
+            display: block;
+            width: 40%;
+            height: 100%;
+            padding-left: 0;
+            text-align: left;
+            padding-bottom: 5rem;
+
+            img {
+              width: 18rem;
+              height: auto;
+            }
+          }
+        }
+
+        .second-section {
+          .card-container-footer {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        
+      }
   `;
 
   render() {
-    console.log(this.dataInfo)
     return html`
       <section class="title-section">
         <div class="left-service-page">
           <h1 class="title-service-page"> 
-            <span class="span-without-color">Conoce</span> todos <br calss="hide-br">nuestros   <br>servicios <span>especializados</span>
+            <span class="span-without-color">Conoce</span> todos <br calss="hide-br">nuestros   <br><span>servicios </span>
           </h1>
           <p class="text-title-service-page">Nos especializamos en el cuidado y mantenimiento de equipos de computo y telefonía movil, somos expertos en soluciones digitales</p>
         </div>
+        <div class="right-section">
+          <img src="../../../assets/services.png" style="filter: invert(100%)">
+        </div>
       </section>
       <section class="second-section">
+        <h2>Nos caracterizá: </h2>
         <div class="card-container">
           ${this.dataInfo.map( element => html `
             <banner-composition 
               class-banner="reason"
               .icon = ${element.icon}
               .title = ${element.title}
-              .text = ${element.description}
               >
             </banner-composition>
           `)}
         </div>
-        <h1 class="title-section-two">Tenemos todo tipo de soluciones para tu equipo</h1>
-        <div class="card-container">
+        <h1 class="title-section-two">Tenemos la solución para tú <span class="green-color-title">equipo</span></h1>
+        <div class="card-container flex">
           ${this.listInfoServices.map( element => html `
             <banner-composition 
+              class="special"
               class-banner="reason-inside-container"
-              .icon = ${element.icon}
-              .title = ${element.title}
-              .text = ${element.description}
-              >
+              .icon=${element.icon}>
             </banner-composition>
           `)}
         </div>
         <div class="ask-for-a-quote">
-          <h2>¿Tu teléfono roto necesita una reparación?</h2>
-          <p>Somos especialistas en pantallas touch</p>
+          <h2>¿ Tu dispositivo no funciona ?</h2>
+          <p>Solicita una cotización sin costo, solo da click en el botón.</p>
           <button>Pedir cotización</button>
         </div>
         <div class="care-your-pc"> 
-          <h2>Cuidamos de tu equipo como tu cuidarías de el</h2>
+          <h2>" Tu equipo es importante para ti, y para nosotros también "</h2>
             <div class="card-container-footer">
               ${this.careComputerEquipment.map( element => html `
                 <banner-composition
                   class-banner="reason-care-computer"
-                  .icon = ${element.image}
-                  .title = ${element.title}
-                  .text = ${element.description}
+                  .icon=${element.image}
+                  .title=${element.title}
                   green-letter=${element.greenLetter}
                   >
                 </banner-composition>
               `)}
+              <a class="icon-link" href="https://wa.me/5531139589?text=Hola%20quiero%20información%20sobre%20Servicios">
+                <svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
+                  <g id="Interface / External_Link">
+                    <path id="Vector" d="M10.0002 5H8.2002C7.08009 5 6.51962 5 6.0918 5.21799C5.71547 5.40973 5.40973 5.71547 5.21799 6.0918C5 6.51962 5 7.08009 5 8.2002V15.8002C5 16.9203 5 17.4801 5.21799 17.9079C5.40973 18.2842 5.71547 18.5905 6.0918 18.7822C6.5192 19 7.07899 19 8.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7822C18.2837 18.5905 18.5905 18.2839 18.7822 17.9076C19 17.4802 19 16.921 19 15.8031V14M20 9V4M20 4H15M20 4L13 11" stroke="#46F68A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                </svg>
+              </a>
             </div>
         </div>
-        <home-page-contact></home-page-contact>
-        <sahios-footer></sahios-footer>
+        <home-page-contact style="padding: 0 2rem;"></home-page-contact>
       </section>
+      <sahios-footer></sahios-footer>
     `
   }
 }

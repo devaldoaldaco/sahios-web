@@ -27,9 +27,40 @@ export class BannerComposition extends LitElement {
   }
 
   static styles = css`
-      *{
+      * {
         margin: 0;
         padding: 0;
+      }
+
+      :host(.special) {
+        width: fit-content;
+
+        .reason, .reason-inside-container {
+          width: fit-content;
+        }
+
+        .reason-inside-container {
+          width: 100%;
+          height: 100%;
+        }
+
+        .reason {
+          margin: 0;
+        }
+
+        .icons {
+          height: 3rem;
+          width: 3rem;
+          filter: invert(100%);
+        }
+      }  
+
+      .reason-care-computer {
+        margin: 0 auto;
+
+        h3 {
+          margin: 0;
+        }
       }
 
       .reason {
@@ -67,15 +98,15 @@ export class BannerComposition extends LitElement {
             font-size: 16px;
           }
         }
+        
         .reason-inside-container {
           border-radius: 1rem;
           margin: 16px 12px;
           text-align: left;
           position: relative;
-          padding: 1rem;
           display: flex;
           justify-content: center;
-          background: rgba(255, 255, 255, 0.06);
+          align-items: center;
           max-width: 500px;
           img {
             height: 2rem;
@@ -170,19 +201,10 @@ export class BannerComposition extends LitElement {
         }
         .reason-inside-container {
           border-radius: 1rem;
-          margin: 2rem auto;
           position: relative;
-          width: calc(85% - 2rem);
-          padding: 1rem;
           display: flex;
           justify-content: center;
-          background: rgba(255, 255, 255, 0.06);
-          max-width: 44.75rem;
-          .icons {
-            position: static;
-            height: 22px;
-            width: 22px;
-          }
+
           div {
             margin-left: 1rem;
             text-align: left;
@@ -193,7 +215,7 @@ export class BannerComposition extends LitElement {
         }
 
         .reason-care-computer {
-          margin: 2rem auto;
+          margin: 0 auto;
           position: relative;
           width: calc(90% - 1rem);
           padding: 1rem;
@@ -201,9 +223,10 @@ export class BannerComposition extends LitElement {
           flex-direction: column;
           justify-content: center;
           max-width: 44.75rem;
+
           h3 {
-            margin: 2rem 0;
-            font-size: 28px;
+            font-size: 2rem;
+            padding: 3rem 0 1rem 0;
           }
           div {
             text-align: left;
@@ -253,13 +276,14 @@ export class BannerComposition extends LitElement {
 
   render() {
     return html`
-         <div class="${this.classBaner}">
-            <img class="icons" src="${this.icon}" alt="checkmark">
-            <div>
-              <h3>${this.title} <span>${this.greenLetter}</span></h3>
-              <p>${this.text}</p>
-            </div>
-          </div>
+      <div class="${this.classBaner}">
+        <img class="icons" src="${this.icon}" alt="checkmark">
+        
+        ${this.text || this.title ? html`<div>
+          <h3>${this.title} <span>${this.greenLetter}</span></h3>
+          <p>${this.text}</p>
+        </div>` : nothing}
+      </div>
     `
   }
 }

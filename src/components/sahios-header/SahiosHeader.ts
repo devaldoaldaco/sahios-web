@@ -8,7 +8,7 @@ interface ClassAdd {
 @customElement('sahios-header')
 export class SahiosHeader extends LitElement {
 
-
+  @property({ type: String }) currentPage = 'home';
   @property({ type: Array }) classAdd:ClassAdd[] = [{
     id:'home', 
     classToString: 'active',
@@ -50,6 +50,10 @@ export class SahiosHeader extends LitElement {
       width: 150px;
     }
 
+    #close {
+      display: none;
+    }
+
     nav {
       display: none;
     }
@@ -61,6 +65,7 @@ export class SahiosHeader extends LitElement {
     li {
       font-size: 0.9rem;
       letter-spacing: 0.03rem;
+      cursor: pointer;
     }
 
     button {
@@ -69,7 +74,7 @@ export class SahiosHeader extends LitElement {
       padding: 0;
     }
 
-    #menu {
+    .menu-btn {
       height: 12px;
       width: 44px;
     }
@@ -104,6 +109,10 @@ export class SahiosHeader extends LitElement {
       button {
         display: none;
       }
+
+      #close, #burger {
+        display: none;
+      }
     }
 
     @media screen and (min-width: 1024px)  {
@@ -136,8 +145,11 @@ export class SahiosHeader extends LitElement {
   `;
 
 
-  _handleMenuClicked(event: MouseEvent) {
-    console.log("evento")
+  _openMenu(event: MouseEvent) {
+    if(screen.width < 794) {
+      this._hideButton('burger');
+      this._showButton('close');
+    }
     this.dispatchEvent(new CustomEvent('sahios-header-menu-clicked', {
       bubbles: true,
       composed: true,
@@ -145,9 +157,37 @@ export class SahiosHeader extends LitElement {
     }));
   }
 
+  _closeMenu(event: MouseEvent) {
+    if(screen.width < 794) {
+      this._hideButton('close');
+      this._showButton('burger');
+    }
+    
+    this.dispatchEvent(new CustomEvent('sahios-sidebar-close-clicked', {
+      bubbles: true,
+      composed: true,
+      detail: this.currentPage
+    }));
+  }
+
+  _showButton(btn: String) {
+    const button: any = this?.shadowRoot?.querySelector(`#${btn}`);
+    button.style.display = 'block';
+  }
+
+  _hideButton(btn: String) {
+    const button: any = this?.shadowRoot?.querySelector(`#${btn}`);
+    button.style.display = 'none';
+  }
+
 
   _changeActive(event: MouseEvent) {
     const target = event.target as HTMLElement;
+    if(screen.width < 794) {
+      this._showButton('burger');
+      this._hideButton('close');
+    }
+    
     this.classAdd = [
       {
         id:'home', 
@@ -166,6 +206,8 @@ export class SahiosHeader extends LitElement {
         classToString: 'false'
       }
     ];
+
+    this.currentPage = target.id;
     this.classAdd.forEach((testing, index) => {
       if(testing.id === target.id) {
         this.classAdd[index].classToString = 'active'
@@ -188,12 +230,17 @@ export class SahiosHeader extends LitElement {
           <nav class="nav-visible">
             <ul>
               <li class="${this.classAdd.length > 0 ? this.classAdd[0].classToString.toString(): ''}" @click=${this._changeActive} id="home"> Inicio </li>
+              <li class="${this.classAdd.length > 0 ? this.classAdd[1].classToString.toString(): ''}" @click=${this._changeActive} id="products"> Productos </li>
               <li class="${this.classAdd.length > 0 ? this.classAdd[2].classToString.toString(): ''}" @click=${this._changeActive} id="service"> Servicios </li>
               <li class="${this.classAdd.length > 0 ? this.classAdd[3].classToString.toString(): ''}" @click=${this._changeActive} id="about"> Acerca de nosotros </li>
             </ul>
           </nav>
-          <button @click="${this._handleMenuClicked}">
-            <img id="menu" src="../../../assets/menu-hamburguesa.svg" alt="Menu hamburguesa" />
+          <button id="burger" @click="${this._openMenu}">
+            <img class="menu-btn" src="../../../assets/menu-hamburguesa.svg" alt="Menu hamburguesa" />
+          </button>
+
+          <button id="close" @click="${this._closeMenu}">
+            <img class="menu-btn" src="../../../assets/icon-close.svg" alt="Cerrar menu" />
           </button>
         </header>
     `;

@@ -34,8 +34,8 @@ export class SahiosSidebar extends LitElement {
       margin: 5rem 0 0 0;
       position: absolute;
       top: 0;
-      right: 0;
-      z-index: 1;
+      left: 0;
+      z-index: 10;
       background: var(--sahios-web-background-color, rgb(8,11,36));
       color: white;
     }
@@ -117,27 +117,23 @@ export class SahiosSidebar extends LitElement {
     }
   `;
 
-  _handleCloseMenu() {
-    this.dispatchEvent(new CustomEvent('sahios-sidebar-close-clicked', {bubbles: true, composed: true, detail: true}));
-  }
-
   _changeActive(event: MouseEvent) {
     const target = event.target as HTMLElement;
     this.classAdd = [
       {
-        id:'home', 
+        id: 'home', 
         classToString: 'false',
       },
       {
-        id:'products',
+        id: 'products',
         classToString: 'false'
       },
       {
-        id :'service', 
+        id: 'services', 
         classToString: 'false'
       },
       {
-        id:"about",
+        id: 'about',
         classToString: 'false'
       }
     ];
@@ -148,7 +144,7 @@ export class SahiosSidebar extends LitElement {
         this.classAdd[index].classToString = 'false'
       }
     });
-    this.dispatchEvent(new CustomEvent('sahios-change-page-header',{
+    this.dispatchEvent(new CustomEvent('sahios-change-page-header', {
       bubbles: true,
       composed: true,
       detail: String(target.id)
@@ -161,6 +157,8 @@ export class SahiosSidebar extends LitElement {
         <nav>
           <ul>
             <li class="${this.classAdd.length > 0 ? this.classAdd[0].classToString.toString(): ''}" @click=${this._changeActive} id="home"> Inicio </li>
+            <li class="${this.classAdd.length > 0 ? this.classAdd[1].classToString.toString(): ''}" @click=${this._changeActive} id="products"> Productos </li>
+            <li class="${this.classAdd.length > 0 ? this.classAdd[2].classToString.toString(): ''}" @click=${this._changeActive} id="service"> Servicios </li>
             <li class="${this.classAdd.length > 0 ? this.classAdd[3].classToString.toString(): ''}" @click=${this._changeActive} id="about"> Acerca de nosotros </li>
           </ul>
         </nav>

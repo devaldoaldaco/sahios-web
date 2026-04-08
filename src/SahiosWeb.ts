@@ -11,15 +11,15 @@ import './pages/home-page/HomePageContact';
 import './pages/products-page/ProductsPage'
 import './components/sahios-footer/SahiosFooter';
 import './components/sahios-sidebar/SahiosSidebar';
-import './pages/service-page/servicePage';
-import './pages/more-about/moreAbout';
+import './pages/service-page/ServicePage';
+import './pages/about-us/AboutUs';
 
 interface PageActive {
   id: String,
   active: boolean
 }
 export class SahiosWeb extends LitElement {
-  @property({ type: String }) title = 'My app';
+  @property({ type: String }) currentPage = 'home';
   @property({ type: Boolean }) sidebarOpen = false;
   @property({ type: Boolean }) changeState = false;
   @property({ type: Boolean }) renderProperty = false;
@@ -57,14 +57,19 @@ export class SahiosWeb extends LitElement {
       position: fixed;
     }
     .body-content{
-      margin: 5rem 0 0 0
+      margin: 5rem 0 0 0;
+      width: 100%;
     }
+    sahios-sidebar {
+      display: none;
+    } 
   `;
 
   _handleShowMenu(event: MouseEvent) {
-    console.log("hola mundo")
     this.sidebarOpen = true;
     this.style.overflow = 'hidden';
+    const sidebar: any = this.shadowRoot?.querySelector('sahios-sidebar');
+    sidebar.style.display = 'block';
   }
 
   _handleHideMenu(event: MouseEvent) {
@@ -74,6 +79,14 @@ export class SahiosWeb extends LitElement {
   }
   
   _changePage(event: MouseEvent){
+    console.log(event)
+    const sidebar: any = this.shadowRoot?.querySelector('sahios-sidebar');
+    sidebar.style.display = 'none';
+    const header: any = this.shadowRoot?.querySelector('sahios-header');
+    if(screen.width < 794) {
+      header._hideButton('close');
+      header._showButton('burger');
+    }
     this.renderProperty = !this.renderProperty;
     const selector = String(event.detail);
     this.pageActive.forEach(element => {
@@ -83,46 +96,52 @@ export class SahiosWeb extends LitElement {
         element.active = false;
       }
     });
+    this.currentPage = selector;
   }
+
+  _goTo(section: String) {
+    const element = this.shadowRoot?.querySelector(`#${section}`);
+    element?.scrollIntoView({ block: "start", behavior: "smooth" });
+  }
+
   get tplHomePage(){
     return this.pageActive[0].active ? html`
-      <home-page></home-page>
+      <home-page @navigate-to-contact="${() => this._goTo('contact')}"></home-page>
       <home-page-reasons></home-page-reasons>
       <home-page-testimonials></home-page-testimonials>
-      <home-page-contact></home-page-contact>
+      <home-page-contact id="contact"></home-page-contact>
       <sahios-footer></sahios-footer>
-      <!--Global Components-->
-      ${this.sidebarOpen ? html`<sahios-sidebar .open="${this.sidebarOpen}" @sahios-change-page-header=${this._handleHideMenu} @sahios-sidebar-close-clicked="${this._handleHideMenu}"></sahios-sidebar>`:nothing }
     `: '';
   }
 
   get tplProductsPage(){
     return  this.pageActive[1].active ? html`
-      <product-page></product-page>`: nothing;
+      <product-page></product-page>
+    ` : nothing;
   }
 
   get tplServicePage() {
     return this.pageActive[2].active ? html`
-    <service-page class="service-page"></service-page>
-          <!--Global Components-->
-      ${this.sidebarOpen ? html`<sahios-sidebar .open="${this.sidebarOpen}" @sahios-change-page-header=${this._handleHideMenu} @sahios-sidebar-close-clicked="${this._handleHideMenu}"></sahios-sidebar>`:nothing }`: nothing;
+      <service-page></service-page>
+    ` : nothing;
   }
 
   get tplMoreAbout() {
     return this.pageActive[3].active ? html `
-    <more-about></more-about>
-          <!--Global Components-->
-      ${this.sidebarOpen ? html`<sahios-sidebar .open="${this.sidebarOpen}" @sahios-change-page-header=${this._handleHideMenu} @sahios-sidebar-close-clicked="${this._handleHideMenu}"></sahios-sidebar>`:nothing }`: nothing;
+      <about-us></about-us>
+    ` : nothing;
   }
 
   render() {
     return html`
-      <sahios-header class="header-main" @sahios-header-menu-clicked="${this._handleShowMenu}" @sahios-change-page-header=${this._changePage}></sahios-header>
+      <sahios-header class="header-main" currentpage="${this.currentPage}" @sahios-header-menu-clicked="${this._handleShowMenu}" @sahios-change-page-header=${this._changePage} @sahios-sidebar-close-clicked="${this._handleHideMenu}"></sahios-header>
       <div class="body-content">
         ${this.tplHomePage}
-        <!-- ${this.tplServicePage}
-        ${this.tplMoreAbout} -->
+        ${this.tplProductsPage}
+        ${this.tplServicePage}
+        ${this.tplMoreAbout}
       </div>
+      <sahios-sidebar @sahios-change-page-header=${this._changePage}></sahios-sidebar>
     `;
   }
 }
